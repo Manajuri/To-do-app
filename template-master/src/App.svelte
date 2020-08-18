@@ -1,6 +1,27 @@
 <script>
 	import axios from "axios";
 
+	let user = null;
+
+	if (localStorage.getItem('user')) {
+		user = JSON.parse(localStorage.getItem('user'));
+	}
+	
+
+	if (user) {
+		axios.get("/todos/" + user.id).then(response => {
+			let _todos = response.data.todos.map(todo => {
+				return {
+					id: todo.id,
+					done: todo.is_completed,
+					description: todo.text
+				};
+			})
+
+			todos = _todos;
+		});
+	}
+
 	function handleLogin(event) {
 		event.preventDefault();
 		const username = document.getElementById("username").value;
@@ -13,6 +34,25 @@
 			if (response.data.success) {
 				user = response.data.user;
 				localStorage.setItem("user", JSON.stringify(user));
+				alert("Giris basarili!!!");
+			}else{
+				alert("Yanlis girdiniz!!!");
+			}
+		});
+	}
+
+	function handleRegister(event) {
+		event.preventDefault();
+		const username = document.getElementById("register_username").value;
+		const password = document.getElementById("register_password").value;
+
+		axios.post("/account/register", {
+			username: username,
+			password: password
+		}).then(response => {
+			console.log(response.data);
+			if (response.data.success) {
+				alert("You can login");
 			}
 		});
 	}
@@ -59,15 +99,62 @@
 				</div>
 				<div class="card-footer">
 					<div class="d-flex justify-content-center links">
-						Don't have an account?<a href="#">Sign Up</a>
+						Don't have an account?<a href="register.html">Sign Up</a>
 					</div>
 					<div class="d-flex justify-content-center">
-						<a href="#">Forgot your password?</a>
+						<a href="https://www.google.com/">Forgot your password?</a>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
+
+
+
+	<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Register</h3>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+				<form action="" on:submit={handleRegister} >
+					
+					
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+						</div>
+						<input type="text" id="register_username" class="form-control" placeholder="Username">
+                    </div>
+                    
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input id="register_password" type="password" class="form-control" placeholder="password">
+                    </div>
+				
+                    <div class="form-group">
+						<button class="btn btn-info">Register</button>
+					</div>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+	
+
+
 </main>
 
 <style>

@@ -26,8 +26,6 @@ app.post('/account/login', (req, res) => {
   if(db = new sqlite3.Database('data.db')){
     console.log("baglandi")
   }
-
-  
   db.get("SELECT * FROM users WHERE username = ? AND password = ?", [
       username, password
   ], (err, row) => {
@@ -39,7 +37,7 @@ app.post('/account/login', (req, res) => {
           
       }
 
-      row.password = null;
+      //row.password = null;
       console.log("Dogru");
       return res.json({
           "success": true,
@@ -77,6 +75,103 @@ app.post('/account/register', (req, res) => {
   });
   db.close();
 });
+
+
+app.get('/todos/:user_id', (req, res) => {
+  const user_id = req.params.user_id;
+  let db;
+  console.log("gel");
+  if(db = new sqlite3.Database('data.db')){
+    console.log("Baglanti basarili");
+  }
+  
+  db.all("SELECT * FROM todos WHERE deleted_at IS NULL AND user_id = ?", [
+      user_id
+  ], (err, rows) => {
+      if (err) {
+          return console.log(err.message);
+          res.json({
+              "success": false,
+          });
+      }
+
+      console.log("rows", rows);
+
+      res.json({
+          "success": true,
+          "todos": rows
+      });
+  });
+  db.close();
+}); //Usera ait todoları çekiyor.
+
+app.post('/todos', (req, res) => {
+  const user_id = req.body.user_id;
+  const text = req.body.text;
+
+  let db = new sqlite3.Database('data.db');
+  db.run("INSERT INTO todos (user_id, text, is_completed, created_at, deleted_at) VALUES (?, ?, ?, ?, ?)", [
+      user_id, text, 0, null, null
+  ], (err) => {
+      if (err) {
+          return console.log(err.message);
+          res.json({
+              "success": false,
+          });
+      }
+
+      res.json({
+          "success": true,
+      });
+  });
+  db.close();
+})
+
+app.post('/todos/:todo_id', (req, res) => {
+  const is_completed = req.body.is_completed;
+
+  const todo_id = req.params.todo_id;
+
+  let db = new sqlite3.Database('data.db');
+  db.run("UPDATE todos SET is_completed = ? WHERE id = ?", [
+      is_completed, todo_id
+  ], (err) => {
+      if (err) {
+          return console.log(err.message);
+          res.json({
+              "success": false,
+          });
+      }
+
+      res.json({
+          "success": true,
+      });
+  });
+  db.close();
+})
+
+app.post('/todos/:todo_id/delete', (req, res) => {
+  const todo_id = req.params.todo_id;
+  const currentTime = new Date();
+
+  let db = new sqlite3.Database('data.db');
+  db.run("UPDATE todos SET deleted_at = ? WHERE id = ?", [
+      currentTime.getTime(), todo_id
+  ], (err) => {
+      if (err) {
+          
+          res.json({
+              "success": false,
+          });
+      }
+
+      res.json({
+          "success": true,
+      });
+  });
+  db.close();
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

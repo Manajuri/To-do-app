@@ -1,12 +1,19 @@
 <script>
 	import axios from "axios";
+	import { quintOut } from 'svelte/easing';
+	import { crossfade } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
+	
 
 	let user = null;
+
+	let bool = false;
+
+	
 
 	if (localStorage.getItem('user')) {
 		user = JSON.parse(localStorage.getItem('user'));
 	}
-	
 
 	if (user) {
 		axios.get("/todos/" + user.id).then(response => {
@@ -22,6 +29,61 @@
 		});
 	}
 
+	
+
+	
+
+
+	const [send, receive] = crossfade({
+		fallback(node, params) {
+			const style = getComputedStyle(node);
+			const transform = style.transform === 'none' ? '' : style.transform;
+
+			return {
+				duration: 600,
+				easing: quintOut,
+				css: t => `
+					transform: ${transform} scale(${t});
+					opacity: ${t}
+				`
+			};
+		}
+	});
+
+	let todos = [];
+	
+	
+	
+	let uid = todos.length + 1;
+
+	function add(input) {
+		const todo = {
+			id: uid++,
+			done: false,
+			description: input.value
+		};
+
+		axios.post("/todos", {
+			user_id: user.id,
+			text: input.value
+		});
+
+		todos = [todo, ...todos];
+		input.value = '';
+	}
+
+	function remove(todo) {
+		todos = todos.filter(t => t !== todo);
+		axios.post("/todos/" + todo.id + "/delete");
+	}
+
+	function changeStatus(todo_id, new_status) {
+		axios.post("/todos/" + todo_id, {
+			is_completed: new_status
+		});
+	}
+
+
 	function handleLogin(event) {
 		event.preventDefault();
 		const username = document.getElementById("username").value;
@@ -34,12 +96,17 @@
 			if (response.data.success) {
 				user = response.data.user;
 				localStorage.setItem("user", JSON.stringify(user));
-				alert("Giris basarili!!!");
+				console.log(user);
+				bool = true;
+				alert(user.id);
+			
 			}else{
 				alert("Yanlis girdiniz!!!");
 			}
 		});
 	}
+
+	
 
 	function handleRegister(event) {
 		event.preventDefault();
@@ -57,14 +124,108 @@
 		});
 	}
 
+	function handleLogout() {
+		user = null;
+		localStorage.removeItem("user");
+	}
+
+	function handleDeletedTodos() {
+		axios.get("/todos/" +user.id+"/deleted")
+		.then(response => {
+			let _todos = response.data.todos.map(todo => {
+				return {
+					id: todo.id,
+					done: todo.is_completed,
+					description: todo.text
+				};
+			})
+
+			todos = _todos;
+		});
+	}
+	function handleActiveTodos() {
+		axios.get("/todos/" +user.id)
+		.then(response => {
+			let _todos = response.data.todos.map(todo => {
+				return {
+					id: todo.id,
+					done: todo.is_completed,
+					description: todo.text
+				};
+			})
+
+			todos = _todos;
+		});
+	}
+
+	
+
+	
+
+	
 
 </script>
 
+<!-- svelte-ignore css-unused-selector -->
 <main>
 	
    <!--LOGIN SCREEN -->
 
+   {#if bool}
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+   <div class='board'>
+	<div class="d-flex justify-content-around align-items-center mt-2">
+		<div>{user.username}</div>
+		<button class="btn btn-primary mr-2" on:click={handleActiveTodos}>Active Todos</button>
+		<button class="btn btn-info mr-2" on:click={handleDeletedTodos}>Deleted Todos</button>
+		<button class="btn btn-danger" on:click={handleLogout}>Logout</button>
+	</div>
+
+	<div class="d-flex justify-content-around align-items-center mt-2"> <p class="text-default" >MY LİST</p> </div>
+
+	<input
+		class="new-todo"
+		placeholder="what needs to be done?"
+		on:keydown="{event => event.key === 'Enter' && add(event.target)}"
+	>
+
+	<div class='left'>
+		<h2>todo</h2>
+		{#each todos.filter(t => !t.done) as todo (todo.id)}
+			<label
+				on:click="{() => changeStatus(todo.id, 1)}"
+				in:receive="{{key: todo.id}}"
+				out:send="{{key: todo.id}}"
+				animate:flip
+			>
+				<input type=checkbox bind:checked={todo.done}>
+				{todo.description}
+				<button on:click="{() => remove(todo)}">x</button>
+			</label>
+		{/each}
+	</div>
+
+	<div class='right'>
+		<h2>done</h2>
+		{#each todos.filter(t => t.done) as todo (todo.id)}
+			<label
+				on:click="{() => changeStatus(todo.id, 0)}"
+				in:receive="{{key: todo.id}}"
+				out:send="{{key: todo.id}}"
+				animate:flip
+				
+			>
+				<input type=checkbox bind:checked={todo.done}>
+				{todo.description}
+				<button on:click="{() => remove(todo)}">x</button>
+			</label>
+		{/each}
+	</div>
+</div>
+
+   {:else}
 	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -150,6 +311,9 @@
 		</div>
 	</div>
 </div>
+{/if}
+
+
 
 
 	
@@ -164,7 +328,7 @@
 main{
 margin: 0;
 padding: 0;
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -172,6 +336,7 @@ font-family: 'Numans', sans-serif;
 }
 
 .container{
+	background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
 height: 100%;
 align-content: center;
 
@@ -249,4 +414,68 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+
+
+.new-todo {
+		font-size: 1.4em;
+		width: 100%;
+		margin: 2em 0 1em 0;
+	}
+
+	.board {
+		max-width: 36em;
+		margin: 0 auto;
+	}
+
+	.left, .right {
+		float: left;
+		width: 50%;
+		padding: 0 1em 0 0;
+		box-sizing: border-box;
+	}
+
+	h2 {
+		font-size: 2em;
+		font-weight: 200;
+		user-select: none;
+	}
+
+	label {
+		top: 0;
+		left: 0;
+		display: block;
+		font-size: 1em;
+		line-height: 1;
+		padding: 0.5em;
+		margin: 0 auto 0.5em auto;
+		border-radius: 2px;
+		background-color: #eee;
+		user-select: none;
+	}
+
+	input { margin: 0 }
+
+	.right label {
+		background-color: rgb(180,240,100);
+	}
+
+	button {
+		float: right;
+		height: 1em;
+		box-sizing: border-box;
+		padding: 0 0.5em;
+		line-height: 1;
+		background-color: transparent;
+		border: none;
+		color: rgb(170,30,30);
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
+	label:hover button {
+		opacity: 1;
+	}
+
+
 </style>

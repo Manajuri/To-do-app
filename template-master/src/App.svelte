@@ -188,13 +188,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
    <div class='board'>
-	<div class="d-flex justify-content-around align-items-center mt-2">
-		<div>{user.username}</div>
+	<div>{user.username}</div>
+	<div class="form-group">
 		<button class="btn btn-primary mr-2" on:click={handleActiveTodos}>Active Todos</button>
 		<button class="btn btn-info mr-2" on:click={handleDeletedTodos}>Deleted Todos</button>
 		<button class="btn btn-danger" on:click={handleLogout}>Logout</button>
 	</div>
-
 	<div class="d-flex justify-content-around align-items-center mt-2"> <p class="text-default" >MY LİST</p> </div>
 
 	<input
@@ -257,16 +256,25 @@
 				</div>
 				<div class="card-body">
 					<form action="" on:submit={handleLogin}>
-						<div class="form-group">
-							<label for="">Username</label>
-							<input type="text" id="username" class="form-control">	
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" id="username" class="form-control" placeholder="username">
+								
 						</div>
-						<div class="form-group">
-							<label for="">Password</label>
-							<input type="password" id="password" class="form-control">	
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" id="password" class="form-control" placeholder="password">
+							
 						</div>
-						<div class="form-group">
-							<button class="btn btn-success">Login</button>
+						<div class="row align-items-center remember">
+							<input type="checkbox">Remember Me
+						</div>
+						<div class="input-group form-group">
+							<input type="submit" value="Login" class="btn float-right login_btn">
 						</div>
 					</form>
 				</div>
@@ -275,7 +283,7 @@
 						Don't have an account?<a href="register.html">Sign Up</a>
 					</div>
 					<div class="d-flex justify-content-center">
-						<a href="https://www.google.com/">Forgot your password?</a>
+						<a href="www.google.com.tr">Forgot your password?</a>
 					</div>
 				</div>
 
@@ -315,7 +323,7 @@
                     </div>
 				
                     <div class="form-group">
-						<button class="btn btn-info">Register</button>
+						<input type="submit" value="register" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>

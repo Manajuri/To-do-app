@@ -7,7 +7,9 @@
 
 	let user = null;
 
-	let bool = false;
+	let activePage = "login";
+
+	
 
 	
 
@@ -97,8 +99,8 @@
 				user = response.data.user;
 				localStorage.setItem("user", JSON.stringify(user));
 				console.log(user);
-				bool = true;
 				alert(user.id);
+				activePage='home';
 				if (user) {
 					axios.get("/todos/" + user.id).then(response => {
 					let _todos = response.data.todos.map(todo => {
@@ -183,18 +185,18 @@
 	
    <!--LOGIN SCREEN -->
 
-   {#if bool}
+   {#if activePage == "home"}
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
    <div class='board'>
-	<div>{user.username}</div>
+	<div>{user.username}<p>hi</p></div>
 	<div class="form-group">
-		<button class="btn btn-primary mr-2" on:click={handleActiveTodos}>Active Todos</button>
-		<button class="btn btn-info mr-2" on:click={handleDeletedTodos}>Deleted Todos</button>
-		<button class="btn btn-danger" on:click={handleLogout}>Logout</button>
+		<input class="btn btn-primary mr-2 b" placeholder="Active Todos " on:click={handleActiveTodos}>
+		<input class="btn btn-info mr-2"placeholder="Deleted Todos" on:click={handleDeletedTodos}>
+		<input class="btn btn-danger"placeholder="Logout" on:click={handleLogout}>
 	</div>
-	<div class="d-flex justify-content-around align-items-center mt-2"> <p class="text-default" >MY LİST</p> </div>
+	<div class="d-flex justify-content-around align-items-center mt-2"> <p class="text-default" >Todo's</p> </div>
 
 	<input
 		class="new-todo"
@@ -236,7 +238,7 @@
 	</div>
 </div>
 
-   {:else}
+   {:else if activePage== "login"}
 	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -280,7 +282,7 @@
 				</div>
 				<div class="card-footer">
 					<div class="d-flex justify-content-center links">
-						Don't have an account?<a href="register.html">Sign Up</a>
+						Don't have an account?<a href on:click|preventDefault={()=>activePage='register'}>Sign Up</a>
 					</div>
 					<div class="d-flex justify-content-center">
 						<a href="www.google.com.tr">Forgot your password?</a>
@@ -291,7 +293,7 @@
 		</div>
 	</div>
 
-
+{:else if activePage=="register" }
 
 	<div class="container">
 	<div class="d-flex justify-content-center h-100">
@@ -361,7 +363,20 @@ height: 100%;
 align-content: center;
 
 }
+.board{
+	background-image: url('http://getwallpapers.com//wallpaper/full/d/f/9/90066.jpg');
+	min-height: 100%;
+	min-width: 2048px;
 
+	width: 100%;
+	height: auto;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-family: 'Numans', sans-serif;
+	color: #030100;
+}
 .card{
 height: 370px;
 margin-top: auto;
@@ -495,6 +510,10 @@ margin-left: 4px;
 
 	label:hover button {
 		opacity: 1;
+	}
+	.b{ color: white;
+
+
 	}
 
 

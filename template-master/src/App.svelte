@@ -99,7 +99,19 @@
 				console.log(user);
 				bool = true;
 				alert(user.id);
-			
+				if (user) {
+					axios.get("/todos/" + user.id).then(response => {
+					let _todos = response.data.todos.map(todo => {
+						return {
+							id: todo.id,
+							done: todo.is_completed,
+							description: todo.text
+						};
+					})
+
+					todos = _todos;
+					});
+				}
 			}else{
 				alert("Yanlis girdiniz!!!");
 			}

@@ -358,20 +358,22 @@ font-family: 'Numans', sans-serif;
 }
 
 .container{
-	background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
 height: 100%;
+width: 100%;
+max-width: 1200px;
 align-content: center;
 
 }
 .board{
 	background-image: url('http://getwallpapers.com//wallpaper/full/d/f/9/90066.jpg');
 	min-height: 100%;
-	min-width: 2048px;
+	min-width: 1900px;
 
 	width: 100%;
 	height: auto;
 
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	font-family: 'Numans', sans-serif;

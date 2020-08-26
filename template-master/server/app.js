@@ -172,6 +172,32 @@ app.post('/todos/:todo_id/delete', (req, res) => {
   db.close();
 })
 
+app.get('/todos/:user_id/deleted', (req, res) => {
+    const user_id = req.params.user_id;
+
+    if(db = new sqlite3.Database('data.db')){
+        console.log("Baglanti basariliiiiii");
+      }
+    db.all("SELECT * FROM todos WHERE deleted_at IS NOT NULL AND user_id = ?", [
+        user_id
+    ], (err, rows) => {
+        if (err) {
+            return console.log(err.message);
+            res.json({
+                "success": false,
+            });
+        }
+
+        console.log("rows", rows);
+
+        res.json({
+            "success": true,
+            "todos": rows
+        });
+    });
+    db.close();
+});//silinen todoları getiriyor.
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

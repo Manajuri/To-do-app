@@ -2301,22 +2301,183 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
-    	child_ctx[22] = list;
-    	child_ctx[23] = i;
+    	child_ctx[24] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
-    	child_ctx[24] = list;
-    	child_ctx[25] = i;
+    	child_ctx[24] = list[i];
+    	child_ctx[27] = list;
+    	child_ctx[28] = i;
     	return child_ctx;
     }
 
-    // (240:3) {:else}
-    function create_else_block(ctx) {
+    function get_each_context_2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[24] = list[i];
+    	child_ctx[29] = list;
+    	child_ctx[30] = i;
+    	return child_ctx;
+    }
+
+    // (332:36) 
+    function create_if_block_2(ctx) {
+    	let div9;
+    	let div8;
+    	let div7;
+    	let div0;
+    	let h3;
+    	let t1;
+    	let div6;
+    	let form;
+    	let div2;
+    	let div1;
+    	let span0;
+    	let i0;
+    	let t2;
+    	let input0;
+    	let t3;
+    	let div4;
+    	let div3;
+    	let span1;
+    	let i1;
+    	let t4;
+    	let input1;
+    	let t5;
+    	let div5;
+    	let input2;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			div9 = element("div");
+    			div8 = element("div");
+    			div7 = element("div");
+    			div0 = element("div");
+    			h3 = element("h3");
+    			h3.textContent = "Register";
+    			t1 = space();
+    			div6 = element("div");
+    			form = element("form");
+    			div2 = element("div");
+    			div1 = element("div");
+    			span0 = element("span");
+    			i0 = element("i");
+    			t2 = space();
+    			input0 = element("input");
+    			t3 = space();
+    			div4 = element("div");
+    			div3 = element("div");
+    			span1 = element("span");
+    			i1 = element("i");
+    			t4 = space();
+    			input1 = element("input");
+    			t5 = space();
+    			div5 = element("div");
+    			input2 = element("input");
+    			attr_dev(h3, "class", "svelte-1vly1ej");
+    			add_location(h3, file, 336, 4, 8100);
+    			attr_dev(div0, "class", "card-header svelte-1vly1ej");
+    			add_location(div0, file, 335, 3, 8069);
+    			attr_dev(i0, "class", "fas fa-user-tie");
+    			add_location(i0, file, 345, 38, 8365);
+    			attr_dev(span0, "class", "input-group-text svelte-1vly1ej");
+    			add_location(span0, file, 345, 7, 8334);
+    			attr_dev(div1, "class", "input-group-prepend svelte-1vly1ej");
+    			add_location(div1, file, 344, 6, 8292);
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "id", "register_username");
+    			attr_dev(input0, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input0, "placeholder", "Username");
+    			add_location(input0, file, 347, 6, 8425);
+    			attr_dev(div2, "class", "input-group form-group");
+    			add_location(div2, file, 343, 20, 8248);
+    			attr_dev(i1, "class", "fas fa-key");
+    			add_location(i1, file, 352, 38, 8700);
+    			attr_dev(span1, "class", "input-group-text svelte-1vly1ej");
+    			add_location(span1, file, 352, 7, 8669);
+    			attr_dev(div3, "class", "input-group-prepend svelte-1vly1ej");
+    			add_location(div3, file, 351, 6, 8627);
+    			attr_dev(input1, "id", "register_password");
+    			attr_dev(input1, "type", "password");
+    			attr_dev(input1, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input1, "placeholder", "password");
+    			add_location(input1, file, 354, 6, 8755);
+    			attr_dev(div4, "class", "input-group form-group");
+    			add_location(div4, file, 350, 20, 8583);
+    			attr_dev(input2, "type", "submit");
+    			input2.value = "Register";
+    			attr_dev(input2, "class", "btn float-right login_btn svelte-1vly1ej");
+    			add_location(input2, file, 358, 6, 8933);
+    			attr_dev(div5, "class", "form-group");
+    			add_location(div5, file, 357, 20, 8901);
+    			attr_dev(form, "action", "");
+    			add_location(form, file, 340, 4, 8168);
+    			attr_dev(div6, "class", "card-body");
+    			add_location(div6, file, 339, 3, 8139);
+    			attr_dev(div7, "class", "card svelte-1vly1ej");
+    			add_location(div7, file, 334, 2, 8046);
+    			attr_dev(div8, "class", "d-flex justify-content-center h-100");
+    			add_location(div8, file, 333, 1, 7993);
+    			attr_dev(div9, "class", "container svelte-1vly1ej");
+    			add_location(div9, file, 332, 1, 7967);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div9, anchor);
+    			append_dev(div9, div8);
+    			append_dev(div8, div7);
+    			append_dev(div7, div0);
+    			append_dev(div0, h3);
+    			append_dev(div7, t1);
+    			append_dev(div7, div6);
+    			append_dev(div6, form);
+    			append_dev(form, div2);
+    			append_dev(div2, div1);
+    			append_dev(div1, span0);
+    			append_dev(span0, i0);
+    			append_dev(div2, t2);
+    			append_dev(div2, input0);
+    			append_dev(form, t3);
+    			append_dev(form, div4);
+    			append_dev(div4, div3);
+    			append_dev(div3, span1);
+    			append_dev(span1, i1);
+    			append_dev(div4, t4);
+    			append_dev(div4, input1);
+    			append_dev(form, t5);
+    			append_dev(form, div5);
+    			append_dev(div5, input2);
+
+    			if (!mounted) {
+    				dispose = listen_dev(form, "submit", /*handleRegister*/ ctx[10], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div9);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(332:36) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (286:34) 
+    function create_if_block_1(ctx) {
     	let link0;
     	let t0;
     	let link1;
@@ -2324,76 +2485,32 @@ var app = (function () {
     	let div11;
     	let div10;
     	let div9;
-    	let div1;
-    	let h30;
-    	let t3;
     	let div0;
+    	let h3;
+    	let t3;
+    	let div6;
+    	let form;
+    	let div2;
+    	let div1;
     	let span0;
     	let i0;
     	let t4;
+    	let input0;
+    	let t5;
+    	let div4;
+    	let div3;
     	let span1;
     	let i1;
-    	let t5;
-    	let span2;
-    	let i2;
     	let t6;
-    	let div5;
-    	let form0;
-    	let div2;
-    	let label0;
-    	let t8;
-    	let input0;
-    	let t9;
-    	let div3;
-    	let label1;
-    	let t11;
     	let input1;
-    	let t12;
-    	let div4;
-    	let button0;
-    	let t14;
-    	let div8;
-    	let div6;
-    	let t15;
-    	let a0;
-    	let t17;
-    	let div7;
-    	let a1;
-    	let t19;
-    	let div22;
-    	let div21;
-    	let div20;
-    	let div13;
-    	let h31;
-    	let t21;
-    	let div12;
-    	let span3;
-    	let i3;
-    	let t22;
-    	let span4;
-    	let i4;
-    	let t23;
-    	let span5;
-    	let i5;
-    	let t24;
-    	let div19;
-    	let form1;
-    	let div15;
-    	let div14;
-    	let span6;
-    	let i6;
-    	let t25;
+    	let t7;
+    	let div5;
     	let input2;
-    	let t26;
-    	let div17;
-    	let div16;
-    	let span7;
-    	let i7;
-    	let t27;
-    	let input3;
-    	let t28;
-    	let div18;
-    	let button1;
+    	let t8;
+    	let div8;
+    	let div7;
+    	let t9;
+    	let a;
     	let mounted;
     	let dispose;
 
@@ -2406,213 +2523,97 @@ var app = (function () {
     			div11 = element("div");
     			div10 = element("div");
     			div9 = element("div");
-    			div1 = element("div");
-    			h30 = element("h3");
-    			h30.textContent = "Sign In";
-    			t3 = space();
     			div0 = element("div");
+    			h3 = element("h3");
+    			h3.textContent = "Login";
+    			t3 = space();
+    			div6 = element("div");
+    			form = element("form");
+    			div2 = element("div");
+    			div1 = element("div");
     			span0 = element("span");
     			i0 = element("i");
     			t4 = space();
+    			input0 = element("input");
+    			t5 = space();
+    			div4 = element("div");
+    			div3 = element("div");
     			span1 = element("span");
     			i1 = element("i");
-    			t5 = space();
-    			span2 = element("span");
-    			i2 = element("i");
     			t6 = space();
-    			div5 = element("div");
-    			form0 = element("form");
-    			div2 = element("div");
-    			label0 = element("label");
-    			label0.textContent = "Username";
-    			t8 = space();
-    			input0 = element("input");
-    			t9 = space();
-    			div3 = element("div");
-    			label1 = element("label");
-    			label1.textContent = "Password";
-    			t11 = space();
     			input1 = element("input");
-    			t12 = space();
-    			div4 = element("div");
-    			button0 = element("button");
-    			button0.textContent = "Login";
-    			t14 = space();
-    			div8 = element("div");
-    			div6 = element("div");
-    			t15 = text("Don't have an account?");
-    			a0 = element("a");
-    			a0.textContent = "Sign Up";
-    			t17 = space();
-    			div7 = element("div");
-    			a1 = element("a");
-    			a1.textContent = "Forgot your password?";
-    			t19 = space();
-    			div22 = element("div");
-    			div21 = element("div");
-    			div20 = element("div");
-    			div13 = element("div");
-    			h31 = element("h3");
-    			h31.textContent = "Register";
-    			t21 = space();
-    			div12 = element("div");
-    			span3 = element("span");
-    			i3 = element("i");
-    			t22 = space();
-    			span4 = element("span");
-    			i4 = element("i");
-    			t23 = space();
-    			span5 = element("span");
-    			i5 = element("i");
-    			t24 = space();
-    			div19 = element("div");
-    			form1 = element("form");
-    			div15 = element("div");
-    			div14 = element("div");
-    			span6 = element("span");
-    			i6 = element("i");
-    			t25 = space();
+    			t7 = space();
+    			div5 = element("div");
     			input2 = element("input");
-    			t26 = space();
-    			div17 = element("div");
-    			div16 = element("div");
-    			span7 = element("span");
-    			i7 = element("i");
-    			t27 = space();
-    			input3 = element("input");
-    			t28 = space();
-    			div18 = element("div");
-    			button1 = element("button");
-    			button1.textContent = "Register";
+    			t8 = space();
+    			div8 = element("div");
+    			div7 = element("div");
+    			t9 = text("Don't have an account?");
+    			a = element("a");
+    			a.textContent = "Sign Up";
     			attr_dev(link0, "rel", "stylesheet");
     			attr_dev(link0, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
     			attr_dev(link0, "integrity", "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO");
     			attr_dev(link0, "crossorigin", "anonymous");
-    			add_location(link0, file, 241, 1, 5309);
+    			add_location(link0, file, 287, 1, 6278);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "https://use.fontawesome.com/releases/v5.3.1/css/all.css");
     			attr_dev(link1, "integrity", "sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU");
     			attr_dev(link1, "crossorigin", "anonymous");
-    			add_location(link1, file, 244, 1, 5557);
-    			attr_dev(h30, "class", "svelte-tnywbs");
-    			add_location(h30, file, 250, 5, 5894);
-    			attr_dev(i0, "class", "fab fa-facebook-square");
-    			add_location(i0, file, 252, 12, 5983);
-    			attr_dev(span0, "class", "svelte-tnywbs");
-    			add_location(span0, file, 252, 6, 5977);
-    			attr_dev(i1, "class", "fab fa-google-plus-square");
-    			add_location(i1, file, 253, 12, 6042);
-    			attr_dev(span1, "class", "svelte-tnywbs");
-    			add_location(span1, file, 253, 6, 6036);
-    			attr_dev(i2, "class", "fab fa-twitter-square");
-    			add_location(i2, file, 254, 12, 6104);
-    			attr_dev(span2, "class", "svelte-tnywbs");
-    			add_location(span2, file, 254, 6, 6098);
-    			attr_dev(div0, "class", "d-flex justify-content-end social_icon svelte-tnywbs");
-    			add_location(div0, file, 251, 5, 5917);
-    			attr_dev(div1, "class", "card-header svelte-tnywbs");
-    			add_location(div1, file, 249, 4, 5862);
-    			attr_dev(label0, "for", "");
-    			attr_dev(label0, "class", "svelte-tnywbs");
-    			add_location(label0, file, 260, 7, 6290);
+    			add_location(link1, file, 290, 1, 6526);
+    			attr_dev(h3, "class", "svelte-1vly1ej");
+    			add_location(h3, file, 296, 5, 6863);
+    			attr_dev(div0, "class", "card-header svelte-1vly1ej");
+    			add_location(div0, file, 295, 4, 6831);
+    			attr_dev(i0, "class", "fas fa-user");
+    			add_location(i0, file, 303, 39, 7100);
+    			attr_dev(span0, "class", "input-group-text svelte-1vly1ej");
+    			add_location(span0, file, 303, 8, 7069);
+    			attr_dev(div1, "class", "input-group-prepend svelte-1vly1ej");
+    			add_location(div1, file, 302, 7, 7025);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "id", "username");
-    			attr_dev(input0, "class", "form-control svelte-tnywbs");
-    			add_location(input0, file, 261, 7, 6329);
-    			attr_dev(div2, "class", "form-group");
-    			add_location(div2, file, 259, 6, 6257);
-    			attr_dev(label1, "for", "");
-    			attr_dev(label1, "class", "svelte-tnywbs");
-    			add_location(label1, file, 264, 7, 6439);
+    			attr_dev(input0, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input0, "placeholder", "username");
+    			add_location(input0, file, 305, 7, 7158);
+    			attr_dev(div2, "class", "input-group form-group");
+    			add_location(div2, file, 301, 6, 6980);
+    			attr_dev(i1, "class", "fas fa-key");
+    			add_location(i1, file, 310, 39, 7385);
+    			attr_dev(span1, "class", "input-group-text svelte-1vly1ej");
+    			add_location(span1, file, 310, 8, 7354);
+    			attr_dev(div3, "class", "input-group-prepend svelte-1vly1ej");
+    			add_location(div3, file, 309, 7, 7311);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "id", "password");
-    			attr_dev(input1, "class", "form-control svelte-tnywbs");
-    			add_location(input1, file, 265, 7, 6478);
-    			attr_dev(div3, "class", "form-group");
-    			add_location(div3, file, 263, 6, 6406);
-    			attr_dev(button0, "class", "btn btn-success svelte-tnywbs");
-    			add_location(button0, file, 268, 7, 6592);
-    			attr_dev(div4, "class", "form-group");
-    			add_location(div4, file, 267, 6, 6559);
-    			attr_dev(form0, "action", "");
-    			add_location(form0, file, 258, 5, 6209);
-    			attr_dev(div5, "class", "card-body");
-    			add_location(div5, file, 257, 4, 6179);
-    			attr_dev(a0, "href", "register.html");
-    			attr_dev(a0, "class", "svelte-tnywbs");
-    			add_location(a0, file, 274, 28, 6795);
-    			attr_dev(div6, "class", "d-flex justify-content-center links svelte-tnywbs");
-    			add_location(div6, file, 273, 5, 6716);
-    			attr_dev(a1, "href", "https://www.google.com/");
-    			add_location(a1, file, 277, 6, 6901);
-    			attr_dev(div7, "class", "d-flex justify-content-center");
-    			add_location(div7, file, 276, 5, 6850);
+    			attr_dev(input1, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input1, "placeholder", "password");
+    			add_location(input1, file, 312, 7, 7442);
+    			attr_dev(div4, "class", "input-group form-group");
+    			add_location(div4, file, 308, 6, 7266);
+    			attr_dev(input2, "type", "submit");
+    			input2.value = "Login";
+    			attr_dev(input2, "class", "btn float-right login_btn svelte-1vly1ej");
+    			add_location(input2, file, 315, 7, 7579);
+    			attr_dev(div5, "class", "form-group");
+    			add_location(div5, file, 314, 6, 7545);
+    			attr_dev(form, "action", "");
+    			add_location(form, file, 300, 5, 6932);
+    			attr_dev(div6, "class", "card-body");
+    			add_location(div6, file, 299, 4, 6902);
+    			attr_dev(a, "href", "#");
+    			attr_dev(a, "class", "svelte-1vly1ej");
+    			add_location(a, file, 321, 28, 7805);
+    			attr_dev(div7, "class", "d-flex justify-content-center links svelte-1vly1ej");
+    			add_location(div7, file, 320, 5, 7726);
     			attr_dev(div8, "class", "card-footer");
-    			add_location(div8, file, 272, 4, 6684);
-    			attr_dev(div9, "class", "card svelte-tnywbs");
-    			add_location(div9, file, 248, 3, 5838);
+    			add_location(div8, file, 319, 4, 7694);
+    			attr_dev(div9, "class", "card svelte-1vly1ej");
+    			add_location(div9, file, 294, 3, 6807);
     			attr_dev(div10, "class", "d-flex justify-content-center h-100");
-    			add_location(div10, file, 247, 2, 5784);
-    			attr_dev(div11, "class", "container svelte-tnywbs");
-    			add_location(div11, file, 246, 1, 5757);
-    			attr_dev(h31, "class", "svelte-tnywbs");
-    			add_location(h31, file, 291, 4, 7159);
-    			attr_dev(i3, "class", "fab fa-facebook-square");
-    			add_location(i3, file, 293, 11, 7247);
-    			attr_dev(span3, "class", "svelte-tnywbs");
-    			add_location(span3, file, 293, 5, 7241);
-    			attr_dev(i4, "class", "fab fa-google-plus-square");
-    			add_location(i4, file, 294, 11, 7305);
-    			attr_dev(span4, "class", "svelte-tnywbs");
-    			add_location(span4, file, 294, 5, 7299);
-    			attr_dev(i5, "class", "fab fa-twitter-square");
-    			add_location(i5, file, 295, 11, 7366);
-    			attr_dev(span5, "class", "svelte-tnywbs");
-    			add_location(span5, file, 295, 5, 7360);
-    			attr_dev(div12, "class", "d-flex justify-content-end social_icon svelte-tnywbs");
-    			add_location(div12, file, 292, 4, 7182);
-    			attr_dev(div13, "class", "card-header svelte-tnywbs");
-    			add_location(div13, file, 290, 3, 7128);
-    			attr_dev(i6, "class", "fas fa-user-tie");
-    			add_location(i6, file, 304, 38, 7664);
-    			attr_dev(span6, "class", "input-group-text svelte-tnywbs");
-    			add_location(span6, file, 304, 7, 7633);
-    			attr_dev(div14, "class", "input-group-prepend svelte-tnywbs");
-    			add_location(div14, file, 303, 6, 7591);
-    			attr_dev(input2, "type", "text");
-    			attr_dev(input2, "id", "register_username");
-    			attr_dev(input2, "class", "form-control svelte-tnywbs");
-    			attr_dev(input2, "placeholder", "Username");
-    			add_location(input2, file, 306, 6, 7724);
-    			attr_dev(div15, "class", "input-group form-group");
-    			add_location(div15, file, 302, 20, 7547);
-    			attr_dev(i7, "class", "fas fa-key");
-    			add_location(i7, file, 311, 38, 7999);
-    			attr_dev(span7, "class", "input-group-text svelte-tnywbs");
-    			add_location(span7, file, 311, 7, 7968);
-    			attr_dev(div16, "class", "input-group-prepend svelte-tnywbs");
-    			add_location(div16, file, 310, 6, 7926);
-    			attr_dev(input3, "id", "register_password");
-    			attr_dev(input3, "type", "password");
-    			attr_dev(input3, "class", "form-control svelte-tnywbs");
-    			attr_dev(input3, "placeholder", "password");
-    			add_location(input3, file, 313, 6, 8054);
-    			attr_dev(div17, "class", "input-group form-group");
-    			add_location(div17, file, 309, 20, 7882);
-    			attr_dev(button1, "class", "btn btn-info svelte-tnywbs");
-    			add_location(button1, file, 317, 6, 8232);
-    			attr_dev(div18, "class", "form-group");
-    			add_location(div18, file, 316, 20, 8200);
-    			attr_dev(form1, "action", "");
-    			add_location(form1, file, 299, 4, 7467);
-    			attr_dev(div19, "class", "card-body");
-    			add_location(div19, file, 298, 3, 7438);
-    			attr_dev(div20, "class", "card svelte-tnywbs");
-    			add_location(div20, file, 289, 2, 7105);
-    			attr_dev(div21, "class", "d-flex justify-content-center h-100");
-    			add_location(div21, file, 288, 1, 7052);
-    			attr_dev(div22, "class", "container svelte-tnywbs");
-    			add_location(div22, file, 287, 1, 7026);
+    			add_location(div10, file, 293, 2, 6753);
+    			attr_dev(div11, "class", "container svelte-1vly1ej");
+    			add_location(div11, file, 292, 1, 6726);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, link0, anchor);
@@ -2622,81 +2623,37 @@ var app = (function () {
     			insert_dev(target, div11, anchor);
     			append_dev(div11, div10);
     			append_dev(div10, div9);
-    			append_dev(div9, div1);
-    			append_dev(div1, h30);
-    			append_dev(div1, t3);
-    			append_dev(div1, div0);
-    			append_dev(div0, span0);
+    			append_dev(div9, div0);
+    			append_dev(div0, h3);
+    			append_dev(div9, t3);
+    			append_dev(div9, div6);
+    			append_dev(div6, form);
+    			append_dev(form, div2);
+    			append_dev(div2, div1);
+    			append_dev(div1, span0);
     			append_dev(span0, i0);
-    			append_dev(div0, t4);
-    			append_dev(div0, span1);
-    			append_dev(span1, i1);
-    			append_dev(div0, t5);
-    			append_dev(div0, span2);
-    			append_dev(span2, i2);
-    			append_dev(div9, t6);
-    			append_dev(div9, div5);
-    			append_dev(div5, form0);
-    			append_dev(form0, div2);
-    			append_dev(div2, label0);
-    			append_dev(div2, t8);
+    			append_dev(div2, t4);
     			append_dev(div2, input0);
-    			append_dev(form0, t9);
-    			append_dev(form0, div3);
-    			append_dev(div3, label1);
-    			append_dev(div3, t11);
-    			append_dev(div3, input1);
-    			append_dev(form0, t12);
-    			append_dev(form0, div4);
-    			append_dev(div4, button0);
-    			append_dev(div9, t14);
+    			append_dev(form, t5);
+    			append_dev(form, div4);
+    			append_dev(div4, div3);
+    			append_dev(div3, span1);
+    			append_dev(span1, i1);
+    			append_dev(div4, t6);
+    			append_dev(div4, input1);
+    			append_dev(form, t7);
+    			append_dev(form, div5);
+    			append_dev(div5, input2);
+    			append_dev(div9, t8);
     			append_dev(div9, div8);
-    			append_dev(div8, div6);
-    			append_dev(div6, t15);
-    			append_dev(div6, a0);
-    			append_dev(div8, t17);
     			append_dev(div8, div7);
-    			append_dev(div7, a1);
-    			insert_dev(target, t19, anchor);
-    			insert_dev(target, div22, anchor);
-    			append_dev(div22, div21);
-    			append_dev(div21, div20);
-    			append_dev(div20, div13);
-    			append_dev(div13, h31);
-    			append_dev(div13, t21);
-    			append_dev(div13, div12);
-    			append_dev(div12, span3);
-    			append_dev(span3, i3);
-    			append_dev(div12, t22);
-    			append_dev(div12, span4);
-    			append_dev(span4, i4);
-    			append_dev(div12, t23);
-    			append_dev(div12, span5);
-    			append_dev(span5, i5);
-    			append_dev(div20, t24);
-    			append_dev(div20, div19);
-    			append_dev(div19, form1);
-    			append_dev(form1, div15);
-    			append_dev(div15, div14);
-    			append_dev(div14, span6);
-    			append_dev(span6, i6);
-    			append_dev(div15, t25);
-    			append_dev(div15, input2);
-    			append_dev(form1, t26);
-    			append_dev(form1, div17);
-    			append_dev(div17, div16);
-    			append_dev(div16, span7);
-    			append_dev(span7, i7);
-    			append_dev(div17, t27);
-    			append_dev(div17, input3);
-    			append_dev(form1, t28);
-    			append_dev(form1, div18);
-    			append_dev(div18, button1);
+    			append_dev(div7, t9);
+    			append_dev(div7, a);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(form0, "submit", /*handleLogin*/ ctx[8], false, false, false),
-    					listen_dev(form1, "submit", /*handleRegister*/ ctx[9], false, false, false)
+    					listen_dev(form, "submit", /*handleLogin*/ ctx[9], false, false, false),
+    					listen_dev(a, "click", /*activePageRegister*/ ctx[14], false, false, false)
     				];
 
     				mounted = true;
@@ -2711,8 +2668,6 @@ var app = (function () {
     			if (detaching) detach_dev(link1);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(div11);
-    			if (detaching) detach_dev(t19);
-    			if (detaching) detach_dev(div22);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -2720,20 +2675,20 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block.name,
-    		type: "else",
-    		source: "(240:3) {:else}",
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(286:34) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (186:3) {#if bool}
+    // (212:3) {#if activePage == "todo"}
     function create_if_block(ctx) {
     	let link;
     	let t0;
-    	let div5;
+    	let div6;
     	let div1;
     	let div0;
     	let t1_value = /*user*/ ctx[0].username + "";
@@ -2745,52 +2700,71 @@ var app = (function () {
     	let t6;
     	let button2;
     	let t8;
+    	let input0;
+    	let t9;
     	let div2;
     	let p;
-    	let t10;
-    	let input;
     	let t11;
+    	let input1;
+    	let t12;
     	let div3;
     	let h20;
-    	let t13;
-    	let each_blocks_1 = [];
-    	let each0_lookup = new Map();
     	let t14;
+    	let each_blocks_2 = [];
+    	let each0_lookup = new Map();
+    	let t15;
     	let div4;
     	let h21;
-    	let t16;
-    	let each_blocks = [];
+    	let t17;
+    	let each_blocks_1 = [];
     	let each1_lookup = new Map();
+    	let t18;
+    	let div5;
+    	let h22;
+    	let t20;
+    	let each_blocks = [];
+    	let each2_lookup = new Map();
     	let current;
     	let mounted;
     	let dispose;
-    	let each_value_1 = /*todos*/ ctx[2].filter(func);
+    	let each_value_2 = /*todos*/ ctx[3].filter(func);
+    	validate_each_argument(each_value_2);
+    	const get_key = ctx => /*todo*/ ctx[24].id;
+    	validate_each_keys(ctx, each_value_2, get_each_context_2, get_key);
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		let child_ctx = get_each_context_2(ctx, each_value_2, i);
+    		let key = get_key(child_ctx);
+    		each0_lookup.set(key, each_blocks_2[i] = create_each_block_2(key, child_ctx));
+    	}
+
+    	let each_value_1 = /*todos*/ ctx[3].filter(func_1);
     	validate_each_argument(each_value_1);
-    	const get_key = ctx => /*todo*/ ctx[21].id;
-    	validate_each_keys(ctx, each_value_1, get_each_context_1, get_key);
+    	const get_key_1 = ctx => /*todo*/ ctx[24].id;
+    	validate_each_keys(ctx, each_value_1, get_each_context_1, get_key_1);
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
     		let child_ctx = get_each_context_1(ctx, each_value_1, i);
-    		let key = get_key(child_ctx);
-    		each0_lookup.set(key, each_blocks_1[i] = create_each_block_1(key, child_ctx));
+    		let key = get_key_1(child_ctx);
+    		each1_lookup.set(key, each_blocks_1[i] = create_each_block_1(key, child_ctx));
     	}
 
-    	let each_value = /*todos*/ ctx[2].filter(func_1);
+    	let each_value = /*todoss*/ ctx[1].filter(func_2);
     	validate_each_argument(each_value);
-    	const get_key_1 = ctx => /*todo*/ ctx[21].id;
-    	validate_each_keys(ctx, each_value, get_each_context, get_key_1);
+    	const get_key_2 = ctx => /*todo*/ ctx[24].id;
+    	validate_each_keys(ctx, each_value, get_each_context, get_key_2);
 
     	for (let i = 0; i < each_value.length; i += 1) {
     		let child_ctx = get_each_context(ctx, each_value, i);
-    		let key = get_key_1(child_ctx);
-    		each1_lookup.set(key, each_blocks[i] = create_each_block(key, child_ctx));
+    		let key = get_key_2(child_ctx);
+    		each2_lookup.set(key, each_blocks[i] = create_each_block(key, child_ctx));
     	}
 
     	const block = {
     		c: function create() {
     			link = element("link");
     			t0 = space();
-    			div5 = element("div");
+    			div6 = element("div");
     			div1 = element("div");
     			div0 = element("div");
     			t1 = text(t1_value);
@@ -2804,26 +2778,38 @@ var app = (function () {
     			button2 = element("button");
     			button2.textContent = "Logout";
     			t8 = space();
+    			input0 = element("input");
+    			t9 = space();
     			div2 = element("div");
     			p = element("p");
     			p.textContent = "MY LİST";
-    			t10 = space();
-    			input = element("input");
     			t11 = space();
+    			input1 = element("input");
+    			t12 = space();
     			div3 = element("div");
     			h20 = element("h2");
     			h20.textContent = "todo";
-    			t13 = space();
+    			t14 = space();
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].c();
+    			}
+
+    			t15 = space();
+    			div4 = element("div");
+    			h21 = element("h2");
+    			h21.textContent = "done";
+    			t17 = space();
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t14 = space();
-    			div4 = element("div");
-    			h21 = element("h2");
-    			h21.textContent = "done";
-    			t16 = space();
+    			t18 = space();
+    			div5 = element("div");
+    			h22 = element("h2");
+    			h22.textContent = "delete todos";
+    			t20 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -2833,39 +2819,47 @@ var app = (function () {
     			attr_dev(link, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
     			attr_dev(link, "integrity", "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO");
     			attr_dev(link, "crossorigin", "anonymous");
-    			add_location(link, file, 187, 0, 3566);
-    			add_location(div0, file, 191, 2, 3877);
-    			attr_dev(button0, "class", "btn btn-primary mr-2 svelte-tnywbs");
-    			add_location(button0, file, 192, 2, 3907);
-    			attr_dev(button1, "class", "btn btn-info mr-2 svelte-tnywbs");
-    			add_location(button1, file, 193, 2, 3998);
-    			attr_dev(button2, "class", "btn btn-danger svelte-tnywbs");
-    			add_location(button2, file, 194, 2, 4088);
+    			add_location(link, file, 213, 0, 4083);
+    			add_location(div0, file, 217, 2, 4394);
+    			attr_dev(button0, "class", "btn btn-primary mr-2 svelte-1vly1ej");
+    			add_location(button0, file, 218, 2, 4424);
+    			attr_dev(button1, "class", "btn btn-info mr-2 svelte-1vly1ej");
+    			add_location(button1, file, 219, 2, 4515);
+    			attr_dev(button2, "class", "btn btn-danger svelte-1vly1ej");
+    			add_location(button2, file, 220, 2, 4605);
+    			attr_dev(input0, "type", "submit");
+    			input0.value = "Logout";
+    			attr_dev(input0, "class", "btn btn-danger svelte-1vly1ej");
+    			add_location(input0, file, 221, 2, 4679);
     			attr_dev(div1, "class", "d-flex justify-content-around align-items-center mt-2");
-    			add_location(div1, file, 190, 1, 3806);
+    			add_location(div1, file, 216, 1, 4323);
     			attr_dev(p, "class", "text-default");
-    			add_location(p, file, 197, 69, 4240);
+    			add_location(p, file, 224, 69, 4844);
     			attr_dev(div2, "class", "d-flex justify-content-around align-items-center mt-2");
-    			add_location(div2, file, 197, 1, 4172);
-    			attr_dev(input, "class", "new-todo svelte-tnywbs");
-    			attr_dev(input, "placeholder", "what needs to be done?");
-    			add_location(input, file, 199, 1, 4288);
-    			attr_dev(h20, "class", "svelte-tnywbs");
-    			add_location(h20, file, 206, 2, 4455);
-    			attr_dev(div3, "class", "left svelte-tnywbs");
-    			add_location(div3, file, 205, 1, 4433);
-    			attr_dev(h21, "class", "svelte-tnywbs");
-    			add_location(h21, file, 222, 2, 4869);
-    			attr_dev(div4, "class", "right svelte-tnywbs");
-    			add_location(div4, file, 221, 1, 4846);
-    			attr_dev(div5, "class", "board svelte-tnywbs");
-    			add_location(div5, file, 189, 3, 3784);
+    			add_location(div2, file, 224, 1, 4776);
+    			attr_dev(input1, "class", "new-todo svelte-1vly1ej");
+    			attr_dev(input1, "placeholder", "what needs to be done?");
+    			add_location(input1, file, 226, 1, 4892);
+    			attr_dev(h20, "class", "svelte-1vly1ej");
+    			add_location(h20, file, 233, 2, 5059);
+    			attr_dev(div3, "class", "left svelte-1vly1ej");
+    			add_location(div3, file, 232, 1, 5037);
+    			attr_dev(h21, "class", "svelte-1vly1ej");
+    			add_location(h21, file, 249, 2, 5473);
+    			attr_dev(div4, "class", "right svelte-1vly1ej");
+    			add_location(div4, file, 248, 1, 5450);
+    			attr_dev(h22, "class", "svelte-1vly1ej");
+    			add_location(h22, file, 266, 2, 5897);
+    			attr_dev(div5, "class", "right down svelte-1vly1ej");
+    			add_location(div5, file, 265, 1, 5869);
+    			attr_dev(div6, "class", "board svelte-1vly1ej");
+    			add_location(div6, file, 215, 3, 4301);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, link, anchor);
     			insert_dev(target, t0, anchor);
-    			insert_dev(target, div5, anchor);
-    			append_dev(div5, div1);
+    			insert_dev(target, div6, anchor);
+    			append_dev(div6, div1);
     			append_dev(div1, div0);
     			append_dev(div0, t1);
     			append_dev(div1, t2);
@@ -2874,37 +2868,49 @@ var app = (function () {
     			append_dev(div1, button1);
     			append_dev(div1, t6);
     			append_dev(div1, button2);
-    			append_dev(div5, t8);
-    			append_dev(div5, div2);
+    			append_dev(div1, t8);
+    			append_dev(div1, input0);
+    			append_dev(div6, t9);
+    			append_dev(div6, div2);
     			append_dev(div2, p);
-    			append_dev(div5, t10);
-    			append_dev(div5, input);
-    			append_dev(div5, t11);
-    			append_dev(div5, div3);
+    			append_dev(div6, t11);
+    			append_dev(div6, input1);
+    			append_dev(div6, t12);
+    			append_dev(div6, div3);
     			append_dev(div3, h20);
-    			append_dev(div3, t13);
+    			append_dev(div3, t14);
 
-    			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(div3, null);
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].m(div3, null);
     			}
 
-    			append_dev(div5, t14);
-    			append_dev(div5, div4);
+    			append_dev(div6, t15);
+    			append_dev(div6, div4);
     			append_dev(div4, h21);
-    			append_dev(div4, t16);
+    			append_dev(div4, t17);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div4, null);
+    			}
+
+    			append_dev(div6, t18);
+    			append_dev(div6, div5);
+    			append_dev(div5, h22);
+    			append_dev(div5, t20);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(div4, null);
+    				each_blocks[i].m(div5, null);
     			}
 
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*handleActiveTodos*/ ctx[12], false, false, false),
-    					listen_dev(button1, "click", /*handleDeletedTodos*/ ctx[11], false, false, false),
-    					listen_dev(button2, "click", /*handleLogout*/ ctx[10], false, false, false),
-    					listen_dev(input, "keydown", /*keydown_handler*/ ctx[13], false, false, false)
+    					listen_dev(button0, "click", /*handleActiveTodos*/ ctx[13], false, false, false),
+    					listen_dev(button1, "click", /*handleDeletedTodos*/ ctx[12], false, false, false),
+    					listen_dev(button2, "click", /*handleLogout*/ ctx[11], false, false, false),
+    					listen_dev(input0, "click", /*handleLogout*/ ctx[11], false, false, false),
+    					listen_dev(input1, "keydown", /*keydown_handler*/ ctx[15], false, false, false)
     				];
 
     				mounted = true;
@@ -2913,30 +2919,45 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if ((!current || dirty & /*user*/ 1) && t1_value !== (t1_value = /*user*/ ctx[0].username + "")) set_data_dev(t1, t1_value);
 
-    			if (dirty & /*changeStatus, todos, remove*/ 196) {
-    				const each_value_1 = /*todos*/ ctx[2].filter(func);
+    			if (dirty & /*changeStatus, todos, remove*/ 392) {
+    				const each_value_2 = /*todos*/ ctx[3].filter(func);
+    				validate_each_argument(each_value_2);
+    				group_outros();
+    				for (let i = 0; i < each_blocks_2.length; i += 1) each_blocks_2[i].r();
+    				validate_each_keys(ctx, each_value_2, get_each_context_2, get_key);
+    				each_blocks_2 = update_keyed_each(each_blocks_2, dirty, get_key, 1, ctx, each_value_2, each0_lookup, div3, fix_and_outro_and_destroy_block, create_each_block_2, null, get_each_context_2);
+    				for (let i = 0; i < each_blocks_2.length; i += 1) each_blocks_2[i].a();
+    				check_outros();
+    			}
+
+    			if (dirty & /*changeStatus, todos, remove*/ 392) {
+    				const each_value_1 = /*todos*/ ctx[3].filter(func_1);
     				validate_each_argument(each_value_1);
     				group_outros();
     				for (let i = 0; i < each_blocks_1.length; i += 1) each_blocks_1[i].r();
-    				validate_each_keys(ctx, each_value_1, get_each_context_1, get_key);
-    				each_blocks_1 = update_keyed_each(each_blocks_1, dirty, get_key, 1, ctx, each_value_1, each0_lookup, div3, fix_and_outro_and_destroy_block, create_each_block_1, null, get_each_context_1);
+    				validate_each_keys(ctx, each_value_1, get_each_context_1, get_key_1);
+    				each_blocks_1 = update_keyed_each(each_blocks_1, dirty, get_key_1, 1, ctx, each_value_1, each1_lookup, div4, fix_and_outro_and_destroy_block, create_each_block_1, null, get_each_context_1);
     				for (let i = 0; i < each_blocks_1.length; i += 1) each_blocks_1[i].a();
     				check_outros();
     			}
 
-    			if (dirty & /*changeStatus, todos, remove*/ 196) {
-    				const each_value = /*todos*/ ctx[2].filter(func_1);
+    			if (dirty & /*changeStatus, todoss*/ 258) {
+    				const each_value = /*todoss*/ ctx[1].filter(func_2);
     				validate_each_argument(each_value);
     				group_outros();
     				for (let i = 0; i < each_blocks.length; i += 1) each_blocks[i].r();
-    				validate_each_keys(ctx, each_value, get_each_context, get_key_1);
-    				each_blocks = update_keyed_each(each_blocks, dirty, get_key_1, 1, ctx, each_value, each1_lookup, div4, fix_and_outro_and_destroy_block, create_each_block, null, get_each_context);
+    				validate_each_keys(ctx, each_value, get_each_context, get_key_2);
+    				each_blocks = update_keyed_each(each_blocks, dirty, get_key_2, 1, ctx, each_value, each2_lookup, div5, fix_and_outro_and_destroy_block, create_each_block, null, get_each_context);
     				for (let i = 0; i < each_blocks.length; i += 1) each_blocks[i].a();
     				check_outros();
     			}
     		},
     		i: function intro(local) {
     			if (current) return;
+
+    			for (let i = 0; i < each_value_2.length; i += 1) {
+    				transition_in(each_blocks_2[i]);
+    			}
 
     			for (let i = 0; i < each_value_1.length; i += 1) {
     				transition_in(each_blocks_1[i]);
@@ -2949,6 +2970,10 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				transition_out(each_blocks_2[i]);
+    			}
+
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				transition_out(each_blocks_1[i]);
     			}
@@ -2962,7 +2987,11 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(link);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(div5);
+    			if (detaching) detach_dev(div6);
+
+    			for (let i = 0; i < each_blocks_2.length; i += 1) {
+    				each_blocks_2[i].d();
+    			}
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].d();
@@ -2981,19 +3010,19 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(186:3) {#if bool}",
+    		source: "(212:3) {#if activePage == \\\"todo\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (208:2) {#each todos.filter(t => !t.done) as todo (todo.id)}
-    function create_each_block_1(key_1, ctx) {
+    // (235:2) {#each todos.filter(t => !t.done) as todo (todo.id)}
+    function create_each_block_2(key_1, ctx) {
     	let label;
     	let input;
     	let t0;
-    	let t1_value = /*todo*/ ctx[21].description + "";
+    	let t1_value = /*todo*/ ctx[24].description + "";
     	let t1;
     	let t2;
     	let button;
@@ -3007,15 +3036,15 @@ var app = (function () {
     	let dispose;
 
     	function input_change_handler() {
-    		/*input_change_handler*/ ctx[14].call(input, /*each_value_1*/ ctx[24], /*todo_index_1*/ ctx[25]);
+    		/*input_change_handler*/ ctx[16].call(input, /*each_value_2*/ ctx[29], /*todo_index_2*/ ctx[30]);
     	}
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[15](/*todo*/ ctx[21], ...args);
+    		return /*click_handler*/ ctx[17](/*todo*/ ctx[24], ...args);
     	}
 
     	function click_handler_1(...args) {
-    		return /*click_handler_1*/ ctx[16](/*todo*/ ctx[21], ...args);
+    		return /*click_handler_1*/ ctx[18](/*todo*/ ctx[24], ...args);
     	}
 
     	const block = {
@@ -3031,18 +3060,18 @@ var app = (function () {
     			button.textContent = "x";
     			t4 = space();
     			attr_dev(input, "type", "checkbox");
-    			attr_dev(input, "class", "svelte-tnywbs");
-    			add_location(input, file, 214, 4, 4682);
-    			attr_dev(button, "class", "svelte-tnywbs");
-    			add_location(button, file, 216, 4, 4758);
-    			attr_dev(label, "class", "svelte-tnywbs");
-    			add_location(label, file, 208, 3, 4529);
+    			attr_dev(input, "class", "svelte-1vly1ej");
+    			add_location(input, file, 241, 4, 5286);
+    			attr_dev(button, "class", "svelte-1vly1ej");
+    			add_location(button, file, 243, 4, 5362);
+    			attr_dev(label, "class", "svelte-1vly1ej");
+    			add_location(label, file, 235, 3, 5133);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
     			append_dev(label, input);
-    			input.checked = /*todo*/ ctx[21].done;
+    			input.checked = /*todo*/ ctx[24].done;
     			append_dev(label, t0);
     			append_dev(label, t1);
     			append_dev(label, t2);
@@ -3063,11 +3092,11 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*todos*/ 4) {
-    				input.checked = /*todo*/ ctx[21].done;
+    			if (dirty & /*todos*/ 8) {
+    				input.checked = /*todo*/ ctx[24].done;
     			}
 
-    			if ((!current || dirty & /*todos*/ 4) && t1_value !== (t1_value = /*todo*/ ctx[21].description + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*todos*/ 8) && t1_value !== (t1_value = /*todo*/ ctx[24].description + "")) set_data_dev(t1, t1_value);
     		},
     		r: function measure() {
     			rect = label.getBoundingClientRect();
@@ -3086,7 +3115,7 @@ var app = (function () {
 
     			add_render_callback(() => {
     				if (label_outro) label_outro.end(1);
-    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[4], { key: /*todo*/ ctx[21].id });
+    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[5], { key: /*todo*/ ctx[24].id });
     				label_intro.start();
     			});
 
@@ -3094,7 +3123,7 @@ var app = (function () {
     		},
     		o: function outro(local) {
     			if (label_intro) label_intro.invalidate();
-    			label_outro = create_out_transition(label, /*send*/ ctx[3], { key: /*todo*/ ctx[21].id });
+    			label_outro = create_out_transition(label, /*send*/ ctx[4], { key: /*todo*/ ctx[24].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -3107,21 +3136,21 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block_1.name,
+    		id: create_each_block_2.name,
     		type: "each",
-    		source: "(208:2) {#each todos.filter(t => !t.done) as todo (todo.id)}",
+    		source: "(235:2) {#each todos.filter(t => !t.done) as todo (todo.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (224:2) {#each todos.filter(t => t.done) as todo (todo.id)}
-    function create_each_block(key_1, ctx) {
+    // (251:2) {#each todos.filter(t => t.done) as todo (todo.id)}
+    function create_each_block_1(key_1, ctx) {
     	let label;
     	let input;
     	let t0;
-    	let t1_value = /*todo*/ ctx[21].description + "";
+    	let t1_value = /*todo*/ ctx[24].description + "";
     	let t1;
     	let t2;
     	let button;
@@ -3135,15 +3164,15 @@ var app = (function () {
     	let dispose;
 
     	function input_change_handler_1() {
-    		/*input_change_handler_1*/ ctx[17].call(input, /*each_value*/ ctx[22], /*todo_index*/ ctx[23]);
+    		/*input_change_handler_1*/ ctx[19].call(input, /*each_value_1*/ ctx[27], /*todo_index_1*/ ctx[28]);
     	}
 
     	function click_handler_2(...args) {
-    		return /*click_handler_2*/ ctx[18](/*todo*/ ctx[21], ...args);
+    		return /*click_handler_2*/ ctx[20](/*todo*/ ctx[24], ...args);
     	}
 
     	function click_handler_3(...args) {
-    		return /*click_handler_3*/ ctx[19](/*todo*/ ctx[21], ...args);
+    		return /*click_handler_3*/ ctx[21](/*todo*/ ctx[24], ...args);
     	}
 
     	const block = {
@@ -3159,18 +3188,18 @@ var app = (function () {
     			button.textContent = "x";
     			t4 = space();
     			attr_dev(input, "type", "checkbox");
-    			attr_dev(input, "class", "svelte-tnywbs");
-    			add_location(input, file, 231, 4, 5101);
-    			attr_dev(button, "class", "svelte-tnywbs");
-    			add_location(button, file, 233, 4, 5177);
-    			attr_dev(label, "class", "svelte-tnywbs");
-    			add_location(label, file, 224, 3, 4942);
+    			attr_dev(input, "class", "svelte-1vly1ej");
+    			add_location(input, file, 258, 4, 5705);
+    			attr_dev(button, "class", "svelte-1vly1ej");
+    			add_location(button, file, 260, 4, 5781);
+    			attr_dev(label, "class", "svelte-1vly1ej");
+    			add_location(label, file, 251, 3, 5546);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
     			append_dev(label, input);
-    			input.checked = /*todo*/ ctx[21].done;
+    			input.checked = /*todo*/ ctx[24].done;
     			append_dev(label, t0);
     			append_dev(label, t1);
     			append_dev(label, t2);
@@ -3191,11 +3220,11 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (dirty & /*todos*/ 4) {
-    				input.checked = /*todo*/ ctx[21].done;
+    			if (dirty & /*todos*/ 8) {
+    				input.checked = /*todo*/ ctx[24].done;
     			}
 
-    			if ((!current || dirty & /*todos*/ 4) && t1_value !== (t1_value = /*todo*/ ctx[21].description + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*todos*/ 8) && t1_value !== (t1_value = /*todo*/ ctx[24].description + "")) set_data_dev(t1, t1_value);
     		},
     		r: function measure() {
     			rect = label.getBoundingClientRect();
@@ -3214,7 +3243,7 @@ var app = (function () {
 
     			add_render_callback(() => {
     				if (label_outro) label_outro.end(1);
-    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[4], { key: /*todo*/ ctx[21].id });
+    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[5], { key: /*todo*/ ctx[24].id });
     				label_intro.start();
     			});
 
@@ -3222,7 +3251,7 @@ var app = (function () {
     		},
     		o: function outro(local) {
     			if (label_intro) label_intro.invalidate();
-    			label_outro = create_out_transition(label, /*send*/ ctx[3], { key: /*todo*/ ctx[21].id });
+    			label_outro = create_out_transition(label, /*send*/ ctx[4], { key: /*todo*/ ctx[24].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -3235,9 +3264,100 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(251:2) {#each todos.filter(t => t.done) as todo (todo.id)}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (268:2) {#each todoss.filter(t => t.done) as todo (todo.id)}
+    function create_each_block(key_1, ctx) {
+    	let label;
+    	let t0_value = /*todo*/ ctx[24].description + "";
+    	let t0;
+    	let t1;
+    	let label_intro;
+    	let label_outro;
+    	let rect;
+    	let stop_animation = noop;
+    	let current;
+    	let mounted;
+    	let dispose;
+
+    	function click_handler_4(...args) {
+    		return /*click_handler_4*/ ctx[22](/*todo*/ ctx[24], ...args);
+    	}
+
+    	const block = {
+    		key: key_1,
+    		first: null,
+    		c: function create() {
+    			label = element("label");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(label, "class", "svelte-1vly1ej");
+    			add_location(label, file, 268, 3, 5979);
+    			this.first = label;
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, label, anchor);
+    			append_dev(label, t0);
+    			append_dev(label, t1);
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(label, "click", click_handler_4, false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if ((!current || dirty & /*todoss*/ 2) && t0_value !== (t0_value = /*todo*/ ctx[24].description + "")) set_data_dev(t0, t0_value);
+    		},
+    		r: function measure() {
+    			rect = label.getBoundingClientRect();
+    		},
+    		f: function fix() {
+    			fix_position(label);
+    			stop_animation();
+    			add_transform(label, rect);
+    		},
+    		a: function animate() {
+    			stop_animation();
+    			stop_animation = create_animation(label, rect, flip, {});
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (label_outro) label_outro.end(1);
+    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[5], { key: /*todo*/ ctx[24].id });
+    				label_intro.start();
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (label_intro) label_intro.invalidate();
+    			label_outro = create_out_transition(label, /*send*/ ctx[4], { key: /*todo*/ ctx[24].id });
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(label);
+    			if (detaching && label_outro) label_outro.end();
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(224:2) {#each todos.filter(t => t.done) as todo (todo.id)}",
+    		source: "(268:2) {#each todoss.filter(t => t.done) as todo (todo.id)}",
     		ctx
     	});
 
@@ -3249,30 +3369,37 @@ var app = (function () {
     	let current_block_type_index;
     	let if_block;
     	let current;
-    	const if_block_creators = [create_if_block, create_else_block];
+    	const if_block_creators = [create_if_block, create_if_block_1, create_if_block_2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*bool*/ ctx[1]) return 0;
-    		return 1;
+    		if (/*activePage*/ ctx[2] == "todo") return 0;
+    		if (/*activePage*/ ctx[2] == "home") return 1;
+    		if (/*activePage*/ ctx[2] == "register") return 2;
+    		return -1;
     	}
 
-    	current_block_type_index = select_block_type(ctx);
-    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	if (~(current_block_type_index = select_block_type(ctx))) {
+    		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    	}
 
     	const block = {
     		c: function create() {
     			main = element("main");
-    			if_block.c();
-    			attr_dev(main, "class", "svelte-tnywbs");
-    			add_location(main, file, 181, 0, 3494);
+    			if (if_block) if_block.c();
+    			attr_dev(main, "class", "svelte-1vly1ej");
+    			add_location(main, file, 207, 0, 3995);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			if_blocks[current_block_type_index].m(main, null);
+
+    			if (~current_block_type_index) {
+    				if_blocks[current_block_type_index].m(main, null);
+    			}
+
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -3280,24 +3407,33 @@ var app = (function () {
     			current_block_type_index = select_block_type(ctx);
 
     			if (current_block_type_index === previous_block_index) {
-    				if_blocks[current_block_type_index].p(ctx, dirty);
+    				if (~current_block_type_index) {
+    					if_blocks[current_block_type_index].p(ctx, dirty);
+    				}
     			} else {
-    				group_outros();
+    				if (if_block) {
+    					group_outros();
 
-    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    					if_blocks[previous_block_index] = null;
-    				});
+    					transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    						if_blocks[previous_block_index] = null;
+    					});
 
-    				check_outros();
-    				if_block = if_blocks[current_block_type_index];
-
-    				if (!if_block) {
-    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    					if_block.c();
+    					check_outros();
     				}
 
-    				transition_in(if_block, 1);
-    				if_block.m(main, null);
+    				if (~current_block_type_index) {
+    					if_block = if_blocks[current_block_type_index];
+
+    					if (!if_block) {
+    						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    						if_block.c();
+    					}
+
+    					transition_in(if_block, 1);
+    					if_block.m(main, null);
+    				} else {
+    					if_block = null;
+    				}
     			}
     		},
     		i: function intro(local) {
@@ -3311,7 +3447,10 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-    			if_blocks[current_block_type_index].d();
+
+    			if (~current_block_type_index) {
+    				if_blocks[current_block_type_index].d();
+    			}
     		}
     	};
 
@@ -3328,29 +3467,30 @@ var app = (function () {
 
     const func = t => !t.done;
     const func_1 = t => t.done;
+    const func_2 = t => t.done;
 
     function instance($$self, $$props, $$invalidate) {
     	let user = null;
-    	let bool = false;
+    	let todoss = [];
+    	let activePage = "home";
 
     	if (localStorage.getItem("user")) {
     		user = JSON.parse(localStorage.getItem("user"));
     	}
 
-    	if (user) {
-    		axios$1.get("/todos/" + user.id).then(response => {
-    			let _todos = response.data.todos.map(todo => {
-    				return {
-    					id: todo.id,
-    					done: todo.is_completed,
-    					description: todo.text
-    				};
-    			});
+    	/*if (user) {
+    	axios.get("/todos/" + user.id).then(response => {
+    		let _todos = response.data.todos.map(todo => {
+    			return {
+    				id: todo.id,
+    				done: todo.is_completed,
+    				description: todo.text
+    			};
+    		})
 
-    			$$invalidate(2, todos = _todos);
-    		});
-    	}
-
+    		todos = _todos;
+    	});
+    }*/
     	const [send, receive] = crossfade({
     		fallback(node, params) {
     			const style = getComputedStyle(node);
@@ -3378,12 +3518,12 @@ var app = (function () {
     		};
 
     		axios$1.post("/todos", { user_id: user.id, text: input.value });
-    		$$invalidate(2, todos = [todo, ...todos]);
+    		$$invalidate(3, todos = [todo, ...todos]);
     		input.value = "";
     	}
 
     	function remove(todo) {
-    		$$invalidate(2, todos = todos.filter(t => t !== todo));
+    		$$invalidate(3, todos = todos.filter(t => t !== todo));
     		axios$1.post("/todos/" + todo.id + "/delete");
     	}
 
@@ -3401,8 +3541,8 @@ var app = (function () {
     				$$invalidate(0, user = response.data.user);
     				localStorage.setItem("user", JSON.stringify(user));
     				console.log(user);
-    				$$invalidate(1, bool = true);
     				alert(user.id);
+    				$$invalidate(2, activePage = "todo");
 
     				if (user) {
     					axios$1.get("/todos/" + user.id).then(response => {
@@ -3414,7 +3554,21 @@ var app = (function () {
     							};
     						});
 
-    						$$invalidate(2, todos = _todos);
+    						$$invalidate(3, todos = _todos);
+    					});
+    				}
+
+    				if (user) {
+    					axios$1.get("/todos/" + user.id + "/deleted").then(response => {
+    						let _todos = response.data.todos.map(todo => {
+    							return {
+    								id: todo.id,
+    								done: todo.is_completed,
+    								description: todo.text
+    							};
+    						});
+
+    						$$invalidate(1, todoss = _todos);
     					});
     				}
     			} else {
@@ -3432,6 +3586,7 @@ var app = (function () {
     			console.log(response.data);
 
     			if (response.data.success) {
+    				$$invalidate(2, activePage = "home");
     				alert("You can login");
     			}
     		});
@@ -3440,6 +3595,9 @@ var app = (function () {
     	function handleLogout() {
     		$$invalidate(0, user = null);
     		localStorage.removeItem("user");
+    		$$invalidate(2, activePage = "home");
+    		$$invalidate(1, todoss = []);
+    		$$invalidate(3, todos = []);
     	}
 
     	function handleDeletedTodos() {
@@ -3452,7 +3610,7 @@ var app = (function () {
     				};
     			});
 
-    			$$invalidate(2, todos = _todos);
+    			$$invalidate(3, todos = _todos);
     		});
     	}
 
@@ -3466,8 +3624,12 @@ var app = (function () {
     				};
     			});
 
-    			$$invalidate(2, todos = _todos);
+    			$$invalidate(3, todos = _todos);
     		});
+    	}
+
+    	function activePageRegister() {
+    		$$invalidate(2, activePage = "register");
     	}
 
     	const writable_props = [];
@@ -3480,21 +3642,22 @@ var app = (function () {
     	validate_slots("App", $$slots, []);
     	const keydown_handler = event => event.key === "Enter" && add(event.target);
 
-    	function input_change_handler(each_value_1, todo_index_1) {
-    		each_value_1[todo_index_1].done = this.checked;
-    		$$invalidate(2, todos);
+    	function input_change_handler(each_value_2, todo_index_2) {
+    		each_value_2[todo_index_2].done = this.checked;
+    		$$invalidate(3, todos);
     	}
 
     	const click_handler = todo => remove(todo);
     	const click_handler_1 = todo => changeStatus(todo.id, 1);
 
-    	function input_change_handler_1(each_value, todo_index) {
-    		each_value[todo_index].done = this.checked;
-    		$$invalidate(2, todos);
+    	function input_change_handler_1(each_value_1, todo_index_1) {
+    		each_value_1[todo_index_1].done = this.checked;
+    		$$invalidate(3, todos);
     	}
 
     	const click_handler_2 = todo => remove(todo);
     	const click_handler_3 = todo => changeStatus(todo.id, 0);
+    	const click_handler_4 = todo => changeStatus(todo.id, 0);
 
     	$$self.$capture_state = () => ({
     		axios: axios$1,
@@ -3502,7 +3665,8 @@ var app = (function () {
     		crossfade,
     		flip,
     		user,
-    		bool,
+    		todoss,
+    		activePage,
     		send,
     		receive,
     		todos,
@@ -3514,13 +3678,15 @@ var app = (function () {
     		handleRegister,
     		handleLogout,
     		handleDeletedTodos,
-    		handleActiveTodos
+    		handleActiveTodos,
+    		activePageRegister
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("user" in $$props) $$invalidate(0, user = $$props.user);
-    		if ("bool" in $$props) $$invalidate(1, bool = $$props.bool);
-    		if ("todos" in $$props) $$invalidate(2, todos = $$props.todos);
+    		if ("todoss" in $$props) $$invalidate(1, todoss = $$props.todoss);
+    		if ("activePage" in $$props) $$invalidate(2, activePage = $$props.activePage);
+    		if ("todos" in $$props) $$invalidate(3, todos = $$props.todos);
     		if ("uid" in $$props) uid = $$props.uid;
     	};
 
@@ -3530,7 +3696,8 @@ var app = (function () {
 
     	return [
     		user,
-    		bool,
+    		todoss,
+    		activePage,
     		todos,
     		send,
     		receive,
@@ -3542,13 +3709,15 @@ var app = (function () {
     		handleLogout,
     		handleDeletedTodos,
     		handleActiveTodos,
+    		activePageRegister,
     		keydown_handler,
     		input_change_handler,
     		click_handler,
     		click_handler_1,
     		input_change_handler_1,
     		click_handler_2,
-    		click_handler_3
+    		click_handler_3,
+    		click_handler_4
     	];
     }
 

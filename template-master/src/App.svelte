@@ -7,15 +7,16 @@
 
 	let user = null;
 
-	let bool = false;
+	let todoss = [];
 
+	let activePage = "home";
 	
 
 	if (localStorage.getItem('user')) {
 		user = JSON.parse(localStorage.getItem('user'));
 	}
 
-	if (user) {
+	/*if (user) {
 		axios.get("/todos/" + user.id).then(response => {
 			let _todos = response.data.todos.map(todo => {
 				return {
@@ -27,7 +28,9 @@
 
 			todos = _todos;
 		});
-	}
+	}*/
+
+	
 
 	
 
@@ -51,6 +54,8 @@
 	});
 
 	let todos = [];
+
+	
 	
 	
 	
@@ -97,8 +102,9 @@
 				user = response.data.user;
 				localStorage.setItem("user", JSON.stringify(user));
 				console.log(user);
-				bool = true;
+				
 				alert(user.id);
+				activePage = "todo";
 				if (user) {
 					axios.get("/todos/" + user.id).then(response => {
 					let _todos = response.data.todos.map(todo => {
@@ -110,6 +116,20 @@
 					})
 
 					todos = _todos;
+					});
+				}
+
+				if (user) {
+					axios.get("/todos/" + user.id + "/deleted").then(response => {
+					let _todos = response.data.todos.map(todo => {
+						return {
+							id: todo.id,
+							done: todo.is_completed,
+							description: todo.text
+						};
+					})
+
+					todoss = _todos;
 					});
 				}
 			}else{
@@ -131,6 +151,7 @@
 		}).then(response => {
 			console.log(response.data);
 			if (response.data.success) {
+				activePage = "home";
 				alert("You can login");
 			}
 		});
@@ -139,6 +160,9 @@
 	function handleLogout() {
 		user = null;
 		localStorage.removeItem("user");
+		activePage = "home";
+		todoss = [];
+		todos = [];
 	}
 
 	function handleDeletedTodos() {
@@ -171,7 +195,9 @@
 	}
 
 	
-
+	function activePageRegister(){
+		activePage = "register";
+	}
 	
 
 	
@@ -183,7 +209,7 @@
 	
    <!--LOGIN SCREEN -->
 
-   {#if bool}
+   {#if activePage == "todo"}
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -193,6 +219,7 @@
 		<button class="btn btn-primary mr-2" on:click={handleActiveTodos}>Active Todos</button>
 		<button class="btn btn-info mr-2" on:click={handleDeletedTodos}>Deleted Todos</button>
 		<button class="btn btn-danger" on:click={handleLogout}>Logout</button>
+		<input type="submit" value="Logout" on:click={handleLogout} class="btn btn-danger">
 	</div>
 
 	<div class="d-flex justify-content-around align-items-center mt-2"> <p class="text-default" >MY LİST</p> </div>
@@ -235,9 +262,28 @@
 			</label>
 		{/each}
 	</div>
+
+	<div class='right down'>
+		<h2>delete todos</h2>
+		{#each todoss.filter(t => t.done) as todo (todo.id)}
+			<label
+				on:click="{() => changeStatus(todo.id, 0)}"
+				in:receive="{{key: todo.id}}"
+				out:send="{{key: todo.id}}"
+				animate:flip
+				
+			>
+				
+				{todo.description}
+				
+			</label>
+		{/each}
+	</div>
+
+
 </div>
 
-   {:else}
+   {:else if activePage == "home"}
 	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -248,35 +294,34 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
-					<h3>Sign In</h3>
-					<div class="d-flex justify-content-end social_icon">
-						<span><i class="fab fa-facebook-square"></i></span>
-						<span><i class="fab fa-google-plus-square"></i></span>
-						<span><i class="fab fa-twitter-square"></i></span>
-					</div>
+					<h3>Login</h3>
+					
 				</div>
 				<div class="card-body">
 					<form action="" on:submit={handleLogin}>
-						<div class="form-group">
-							<label for="">Username</label>
-							<input type="text" id="username" class="form-control">	
+						<div class="input-group form-group">
+							<div class="input-group-prepend" >
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" id="username" class="form-control" placeholder="username">
+							
 						</div>
-						<div class="form-group">
-							<label for="">Password</label>
-							<input type="password" id="password" class="form-control">	
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" id="password" class="form-control" placeholder="password">
 						</div>
-						<div class="form-group">
-							<button class="btn btn-success">Login</button>
+						<div class="form-group" >
+							<input type="submit" value="Login" class="btn float-right login_btn">
 						</div>
 					</form>
 				</div>
 				<div class="card-footer">
 					<div class="d-flex justify-content-center links">
-						Don't have an account?<a href="register.html">Sign Up</a>
+						Don't have an account?<a href="#" on:click={activePageRegister}>Sign Up</a>
 					</div>
-					<div class="d-flex justify-content-center">
-						<a href="https://www.google.com/">Forgot your password?</a>
-					</div>
+					
 				</div>
 
 			</div>
@@ -284,17 +329,13 @@
 	</div>
 
 
-
+	{:else if activePage == "register"}
 	<div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
 				<h3>Register</h3>
-				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-google-plus-square"></i></span>
-					<span><i class="fab fa-twitter-square"></i></span>
-				</div>
+				
 			</div>
 			<div class="card-body">
 				<form action="" on:submit={handleRegister} >
@@ -315,7 +356,7 @@
                     </div>
 				
                     <div class="form-group">
-						<button class="btn btn-info">Register</button>
+						<input type="submit" value="Register" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
@@ -446,6 +487,8 @@ margin-left: 4px;
 		padding: 0 1em 0 0;
 		box-sizing: border-box;
 	}
+
+	
 
 	h2 {
 		font-size: 2em;

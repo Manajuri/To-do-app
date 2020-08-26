@@ -92,13 +92,6 @@ var app = (function () {
         node.addEventListener(event, handler, options);
         return () => node.removeEventListener(event, handler, options);
     }
-    function prevent_default(fn) {
-        return function (event) {
-            event.preventDefault();
-            // @ts-ignore
-            return fn.call(this, event);
-        };
-    }
     function attr(node, attribute, value) {
         if (value == null)
             node.removeAttribute(attribute);
@@ -2308,230 +2301,31 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[22] = list[i];
-    	child_ctx[23] = list;
-    	child_ctx[24] = i;
+    	child_ctx[21] = list[i];
+    	child_ctx[22] = list;
+    	child_ctx[23] = i;
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[22] = list[i];
-    	child_ctx[25] = list;
-    	child_ctx[26] = i;
+    	child_ctx[21] = list[i];
+    	child_ctx[24] = list;
+    	child_ctx[25] = i;
     	return child_ctx;
     }
 
-    // (296:34) 
-    function create_if_block_2(ctx) {
-    	let div10;
-    	let div9;
-    	let div8;
-    	let div1;
-    	let h3;
-    	let t1;
-    	let div0;
-    	let span0;
-    	let i0;
-    	let t2;
-    	let span1;
-    	let i1;
-    	let t3;
-    	let span2;
-    	let i2;
-    	let t4;
-    	let div7;
-    	let form;
-    	let div3;
-    	let div2;
-    	let span3;
-    	let i3;
-    	let t5;
-    	let input0;
-    	let t6;
-    	let div5;
-    	let div4;
-    	let span4;
-    	let i4;
-    	let t7;
-    	let input1;
-    	let t8;
-    	let div6;
-    	let input2;
-    	let mounted;
-    	let dispose;
-
-    	const block = {
-    		c: function create() {
-    			div10 = element("div");
-    			div9 = element("div");
-    			div8 = element("div");
-    			div1 = element("div");
-    			h3 = element("h3");
-    			h3.textContent = "Register";
-    			t1 = space();
-    			div0 = element("div");
-    			span0 = element("span");
-    			i0 = element("i");
-    			t2 = space();
-    			span1 = element("span");
-    			i1 = element("i");
-    			t3 = space();
-    			span2 = element("span");
-    			i2 = element("i");
-    			t4 = space();
-    			div7 = element("div");
-    			form = element("form");
-    			div3 = element("div");
-    			div2 = element("div");
-    			span3 = element("span");
-    			i3 = element("i");
-    			t5 = space();
-    			input0 = element("input");
-    			t6 = space();
-    			div5 = element("div");
-    			div4 = element("div");
-    			span4 = element("span");
-    			i4 = element("i");
-    			t7 = space();
-    			input1 = element("input");
-    			t8 = space();
-    			div6 = element("div");
-    			input2 = element("input");
-    			attr_dev(h3, "class", "svelte-efj4qd");
-    			add_location(h3, file, 301, 4, 7677);
-    			attr_dev(i0, "class", "fab fa-facebook-square");
-    			add_location(i0, file, 303, 11, 7765);
-    			attr_dev(span0, "class", "svelte-efj4qd");
-    			add_location(span0, file, 303, 5, 7759);
-    			attr_dev(i1, "class", "fab fa-google-plus-square");
-    			add_location(i1, file, 304, 11, 7823);
-    			attr_dev(span1, "class", "svelte-efj4qd");
-    			add_location(span1, file, 304, 5, 7817);
-    			attr_dev(i2, "class", "fab fa-twitter-square");
-    			add_location(i2, file, 305, 11, 7884);
-    			attr_dev(span2, "class", "svelte-efj4qd");
-    			add_location(span2, file, 305, 5, 7878);
-    			attr_dev(div0, "class", "d-flex justify-content-end social_icon svelte-efj4qd");
-    			add_location(div0, file, 302, 4, 7700);
-    			attr_dev(div1, "class", "card-header svelte-efj4qd");
-    			add_location(div1, file, 300, 3, 7646);
-    			attr_dev(i3, "class", "fas fa-user-tie");
-    			add_location(i3, file, 314, 38, 8182);
-    			attr_dev(span3, "class", "input-group-text svelte-efj4qd");
-    			add_location(span3, file, 314, 7, 8151);
-    			attr_dev(div2, "class", "input-group-prepend svelte-efj4qd");
-    			add_location(div2, file, 313, 6, 8109);
-    			attr_dev(input0, "type", "text");
-    			attr_dev(input0, "id", "register_username");
-    			attr_dev(input0, "class", "form-control svelte-efj4qd");
-    			attr_dev(input0, "placeholder", "Username");
-    			add_location(input0, file, 316, 6, 8242);
-    			attr_dev(div3, "class", "input-group form-group");
-    			add_location(div3, file, 312, 20, 8065);
-    			attr_dev(i4, "class", "fas fa-key");
-    			add_location(i4, file, 321, 38, 8517);
-    			attr_dev(span4, "class", "input-group-text svelte-efj4qd");
-    			add_location(span4, file, 321, 7, 8486);
-    			attr_dev(div4, "class", "input-group-prepend svelte-efj4qd");
-    			add_location(div4, file, 320, 6, 8444);
-    			attr_dev(input1, "id", "register_password");
-    			attr_dev(input1, "type", "password");
-    			attr_dev(input1, "class", "form-control svelte-efj4qd");
-    			attr_dev(input1, "placeholder", "password");
-    			add_location(input1, file, 323, 6, 8572);
-    			attr_dev(div5, "class", "input-group form-group");
-    			add_location(div5, file, 319, 20, 8400);
-    			attr_dev(input2, "type", "submit");
-    			input2.value = "register";
-    			attr_dev(input2, "class", "btn float-right login_btn svelte-efj4qd");
-    			add_location(input2, file, 327, 6, 8750);
-    			attr_dev(div6, "class", "form-group");
-    			add_location(div6, file, 326, 20, 8718);
-    			attr_dev(form, "action", "");
-    			add_location(form, file, 309, 4, 7985);
-    			attr_dev(div7, "class", "card-body");
-    			add_location(div7, file, 308, 3, 7956);
-    			attr_dev(div8, "class", "card svelte-efj4qd");
-    			add_location(div8, file, 299, 2, 7623);
-    			attr_dev(div9, "class", "d-flex justify-content-center h-100");
-    			add_location(div9, file, 298, 1, 7570);
-    			attr_dev(div10, "class", "container svelte-efj4qd");
-    			add_location(div10, file, 297, 1, 7544);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, div10, anchor);
-    			append_dev(div10, div9);
-    			append_dev(div9, div8);
-    			append_dev(div8, div1);
-    			append_dev(div1, h3);
-    			append_dev(div1, t1);
-    			append_dev(div1, div0);
-    			append_dev(div0, span0);
-    			append_dev(span0, i0);
-    			append_dev(div0, t2);
-    			append_dev(div0, span1);
-    			append_dev(span1, i1);
-    			append_dev(div0, t3);
-    			append_dev(div0, span2);
-    			append_dev(span2, i2);
-    			append_dev(div8, t4);
-    			append_dev(div8, div7);
-    			append_dev(div7, form);
-    			append_dev(form, div3);
-    			append_dev(div3, div2);
-    			append_dev(div2, span3);
-    			append_dev(span3, i3);
-    			append_dev(div3, t5);
-    			append_dev(div3, input0);
-    			append_dev(form, t6);
-    			append_dev(form, div5);
-    			append_dev(div5, div4);
-    			append_dev(div4, span4);
-    			append_dev(span4, i4);
-    			append_dev(div5, t7);
-    			append_dev(div5, input1);
-    			append_dev(form, t8);
-    			append_dev(form, div6);
-    			append_dev(div6, input2);
-
-    			if (!mounted) {
-    				dispose = listen_dev(form, "submit", /*handleRegister*/ ctx[9], false, false, false);
-    				mounted = true;
-    			}
-    		},
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div10);
-    			mounted = false;
-    			dispose();
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block_2.name,
-    		type: "if",
-    		source: "(296:34) ",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (241:34) 
-    function create_if_block_1(ctx) {
+    // (240:3) {:else}
+    function create_else_block(ctx) {
     	let link0;
     	let t0;
     	let link1;
     	let t1;
-    	let div14;
-    	let div13;
-    	let div12;
+    	let div11;
+    	let div10;
+    	let div9;
     	let div1;
-    	let h3;
+    	let h30;
     	let t3;
     	let div0;
     	let span0;
@@ -2543,36 +2337,63 @@ var app = (function () {
     	let span2;
     	let i2;
     	let t6;
-    	let div8;
-    	let form;
-    	let div3;
+    	let div5;
+    	let form0;
     	let div2;
+    	let label0;
+    	let t8;
+    	let input0;
+    	let t9;
+    	let div3;
+    	let label1;
+    	let t11;
+    	let input1;
+    	let t12;
+    	let div4;
+    	let button0;
+    	let t14;
+    	let div8;
+    	let div6;
+    	let t15;
+    	let a0;
+    	let t17;
+    	let div7;
+    	let a1;
+    	let t19;
+    	let div22;
+    	let div21;
+    	let div20;
+    	let div13;
+    	let h31;
+    	let t21;
+    	let div12;
     	let span3;
     	let i3;
-    	let t7;
-    	let input0;
-    	let t8;
-    	let div5;
-    	let div4;
+    	let t22;
     	let span4;
     	let i4;
-    	let t9;
-    	let input1;
-    	let t10;
-    	let div6;
+    	let t23;
+    	let span5;
+    	let i5;
+    	let t24;
+    	let div19;
+    	let form1;
+    	let div15;
+    	let div14;
+    	let span6;
+    	let i6;
+    	let t25;
     	let input2;
-    	let t11;
-    	let t12;
-    	let div7;
+    	let t26;
+    	let div17;
+    	let div16;
+    	let span7;
+    	let i7;
+    	let t27;
     	let input3;
-    	let t13;
-    	let div11;
-    	let div9;
-    	let t14;
-    	let a0;
-    	let t16;
-    	let div10;
-    	let a1;
+    	let t28;
+    	let div18;
+    	let button1;
     	let mounted;
     	let dispose;
 
@@ -2582,12 +2403,12 @@ var app = (function () {
     			t0 = space();
     			link1 = element("link");
     			t1 = space();
-    			div14 = element("div");
-    			div13 = element("div");
-    			div12 = element("div");
+    			div11 = element("div");
+    			div10 = element("div");
+    			div9 = element("div");
     			div1 = element("div");
-    			h3 = element("h3");
-    			h3.textContent = "Sign In";
+    			h30 = element("h3");
+    			h30.textContent = "Sign In";
     			t3 = space();
     			div0 = element("div");
     			span0 = element("span");
@@ -2599,135 +2420,210 @@ var app = (function () {
     			span2 = element("span");
     			i2 = element("i");
     			t6 = space();
-    			div8 = element("div");
-    			form = element("form");
-    			div3 = element("div");
-    			div2 = element("div");
-    			span3 = element("span");
-    			i3 = element("i");
-    			t7 = space();
-    			input0 = element("input");
-    			t8 = space();
     			div5 = element("div");
-    			div4 = element("div");
-    			span4 = element("span");
-    			i4 = element("i");
+    			form0 = element("form");
+    			div2 = element("div");
+    			label0 = element("label");
+    			label0.textContent = "Username";
+    			t8 = space();
+    			input0 = element("input");
     			t9 = space();
+    			div3 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Password";
+    			t11 = space();
     			input1 = element("input");
-    			t10 = space();
-    			div6 = element("div");
-    			input2 = element("input");
-    			t11 = text("Remember Me");
     			t12 = space();
-    			div7 = element("div");
-    			input3 = element("input");
-    			t13 = space();
-    			div11 = element("div");
-    			div9 = element("div");
-    			t14 = text("Don't have an account?");
+    			div4 = element("div");
+    			button0 = element("button");
+    			button0.textContent = "Login";
+    			t14 = space();
+    			div8 = element("div");
+    			div6 = element("div");
+    			t15 = text("Don't have an account?");
     			a0 = element("a");
     			a0.textContent = "Sign Up";
-    			t16 = space();
-    			div10 = element("div");
+    			t17 = space();
+    			div7 = element("div");
     			a1 = element("a");
     			a1.textContent = "Forgot your password?";
+    			t19 = space();
+    			div22 = element("div");
+    			div21 = element("div");
+    			div20 = element("div");
+    			div13 = element("div");
+    			h31 = element("h3");
+    			h31.textContent = "Register";
+    			t21 = space();
+    			div12 = element("div");
+    			span3 = element("span");
+    			i3 = element("i");
+    			t22 = space();
+    			span4 = element("span");
+    			i4 = element("i");
+    			t23 = space();
+    			span5 = element("span");
+    			i5 = element("i");
+    			t24 = space();
+    			div19 = element("div");
+    			form1 = element("form");
+    			div15 = element("div");
+    			div14 = element("div");
+    			span6 = element("span");
+    			i6 = element("i");
+    			t25 = space();
+    			input2 = element("input");
+    			t26 = space();
+    			div17 = element("div");
+    			div16 = element("div");
+    			span7 = element("span");
+    			i7 = element("i");
+    			t27 = space();
+    			input3 = element("input");
+    			t28 = space();
+    			div18 = element("div");
+    			button1 = element("button");
+    			button1.textContent = "Register";
     			attr_dev(link0, "rel", "stylesheet");
     			attr_dev(link0, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
     			attr_dev(link0, "integrity", "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO");
     			attr_dev(link0, "crossorigin", "anonymous");
-    			add_location(link0, file, 242, 1, 5346);
+    			add_location(link0, file, 241, 1, 5309);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "https://use.fontawesome.com/releases/v5.3.1/css/all.css");
     			attr_dev(link1, "integrity", "sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU");
     			attr_dev(link1, "crossorigin", "anonymous");
-    			add_location(link1, file, 245, 1, 5594);
-    			attr_dev(h3, "class", "svelte-efj4qd");
-    			add_location(h3, file, 251, 5, 5931);
+    			add_location(link1, file, 244, 1, 5557);
+    			attr_dev(h30, "class", "svelte-tnywbs");
+    			add_location(h30, file, 250, 5, 5894);
     			attr_dev(i0, "class", "fab fa-facebook-square");
-    			add_location(i0, file, 253, 12, 6020);
-    			attr_dev(span0, "class", "svelte-efj4qd");
-    			add_location(span0, file, 253, 6, 6014);
+    			add_location(i0, file, 252, 12, 5983);
+    			attr_dev(span0, "class", "svelte-tnywbs");
+    			add_location(span0, file, 252, 6, 5977);
     			attr_dev(i1, "class", "fab fa-google-plus-square");
-    			add_location(i1, file, 254, 12, 6079);
-    			attr_dev(span1, "class", "svelte-efj4qd");
-    			add_location(span1, file, 254, 6, 6073);
+    			add_location(i1, file, 253, 12, 6042);
+    			attr_dev(span1, "class", "svelte-tnywbs");
+    			add_location(span1, file, 253, 6, 6036);
     			attr_dev(i2, "class", "fab fa-twitter-square");
-    			add_location(i2, file, 255, 12, 6141);
-    			attr_dev(span2, "class", "svelte-efj4qd");
-    			add_location(span2, file, 255, 6, 6135);
-    			attr_dev(div0, "class", "d-flex justify-content-end social_icon svelte-efj4qd");
-    			add_location(div0, file, 252, 5, 5954);
-    			attr_dev(div1, "class", "card-header svelte-efj4qd");
-    			add_location(div1, file, 250, 4, 5899);
-    			attr_dev(i3, "class", "fas fa-user");
-    			add_location(i3, file, 262, 39, 6413);
-    			attr_dev(span3, "class", "input-group-text svelte-efj4qd");
-    			add_location(span3, file, 262, 8, 6382);
-    			attr_dev(div2, "class", "input-group-prepend svelte-efj4qd");
-    			add_location(div2, file, 261, 7, 6339);
+    			add_location(i2, file, 254, 12, 6104);
+    			attr_dev(span2, "class", "svelte-tnywbs");
+    			add_location(span2, file, 254, 6, 6098);
+    			attr_dev(div0, "class", "d-flex justify-content-end social_icon svelte-tnywbs");
+    			add_location(div0, file, 251, 5, 5917);
+    			attr_dev(div1, "class", "card-header svelte-tnywbs");
+    			add_location(div1, file, 249, 4, 5862);
+    			attr_dev(label0, "for", "");
+    			attr_dev(label0, "class", "svelte-tnywbs");
+    			add_location(label0, file, 260, 7, 6290);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "id", "username");
-    			attr_dev(input0, "class", "form-control svelte-efj4qd");
-    			attr_dev(input0, "placeholder", "username");
-    			add_location(input0, file, 264, 7, 6471);
-    			attr_dev(div3, "class", "input-group form-group");
-    			add_location(div3, file, 260, 6, 6294);
-    			attr_dev(i4, "class", "fas fa-key");
-    			add_location(i4, file, 269, 39, 6699);
-    			attr_dev(span4, "class", "input-group-text svelte-efj4qd");
-    			add_location(span4, file, 269, 8, 6668);
-    			attr_dev(div4, "class", "input-group-prepend svelte-efj4qd");
-    			add_location(div4, file, 268, 7, 6625);
+    			attr_dev(input0, "class", "form-control svelte-tnywbs");
+    			add_location(input0, file, 261, 7, 6329);
+    			attr_dev(div2, "class", "form-group");
+    			add_location(div2, file, 259, 6, 6257);
+    			attr_dev(label1, "for", "");
+    			attr_dev(label1, "class", "svelte-tnywbs");
+    			add_location(label1, file, 264, 7, 6439);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "id", "password");
-    			attr_dev(input1, "class", "form-control svelte-efj4qd");
-    			attr_dev(input1, "placeholder", "password");
-    			add_location(input1, file, 271, 7, 6756);
-    			attr_dev(div5, "class", "input-group form-group");
-    			add_location(div5, file, 267, 6, 6580);
-    			attr_dev(input2, "type", "checkbox");
-    			attr_dev(input2, "class", "svelte-efj4qd");
-    			add_location(input2, file, 275, 7, 6922);
-    			attr_dev(div6, "class", "row align-items-center remember svelte-efj4qd");
-    			add_location(div6, file, 274, 6, 6868);
-    			attr_dev(input3, "type", "submit");
-    			input3.value = "Login";
-    			attr_dev(input3, "class", "btn float-right login_btn svelte-efj4qd");
-    			add_location(input3, file, 278, 7, 7023);
-    			attr_dev(div7, "class", "input-group form-group");
-    			add_location(div7, file, 277, 6, 6978);
-    			attr_dev(form, "action", "");
-    			add_location(form, file, 259, 5, 6246);
-    			attr_dev(div8, "class", "card-body");
-    			add_location(div8, file, 258, 4, 6216);
-    			attr_dev(a0, "href", "");
-    			attr_dev(a0, "class", "svelte-efj4qd");
-    			add_location(a0, file, 284, 28, 7249);
-    			attr_dev(div9, "class", "d-flex justify-content-center links svelte-efj4qd");
-    			add_location(div9, file, 283, 5, 7170);
-    			attr_dev(a1, "href", "www.google.com.tr");
-    			add_location(a1, file, 287, 6, 7391);
-    			attr_dev(div10, "class", "d-flex justify-content-center");
-    			add_location(div10, file, 286, 5, 7340);
-    			attr_dev(div11, "class", "card-footer");
-    			add_location(div11, file, 282, 4, 7138);
-    			attr_dev(div12, "class", "card svelte-efj4qd");
-    			add_location(div12, file, 249, 3, 5875);
-    			attr_dev(div13, "class", "d-flex justify-content-center h-100");
-    			add_location(div13, file, 248, 2, 5821);
-    			attr_dev(div14, "class", "container svelte-efj4qd");
-    			add_location(div14, file, 247, 1, 5794);
+    			attr_dev(input1, "class", "form-control svelte-tnywbs");
+    			add_location(input1, file, 265, 7, 6478);
+    			attr_dev(div3, "class", "form-group");
+    			add_location(div3, file, 263, 6, 6406);
+    			attr_dev(button0, "class", "btn btn-success svelte-tnywbs");
+    			add_location(button0, file, 268, 7, 6592);
+    			attr_dev(div4, "class", "form-group");
+    			add_location(div4, file, 267, 6, 6559);
+    			attr_dev(form0, "action", "");
+    			add_location(form0, file, 258, 5, 6209);
+    			attr_dev(div5, "class", "card-body");
+    			add_location(div5, file, 257, 4, 6179);
+    			attr_dev(a0, "href", "register.html");
+    			attr_dev(a0, "class", "svelte-tnywbs");
+    			add_location(a0, file, 274, 28, 6795);
+    			attr_dev(div6, "class", "d-flex justify-content-center links svelte-tnywbs");
+    			add_location(div6, file, 273, 5, 6716);
+    			attr_dev(a1, "href", "https://www.google.com/");
+    			add_location(a1, file, 277, 6, 6901);
+    			attr_dev(div7, "class", "d-flex justify-content-center");
+    			add_location(div7, file, 276, 5, 6850);
+    			attr_dev(div8, "class", "card-footer");
+    			add_location(div8, file, 272, 4, 6684);
+    			attr_dev(div9, "class", "card svelte-tnywbs");
+    			add_location(div9, file, 248, 3, 5838);
+    			attr_dev(div10, "class", "d-flex justify-content-center h-100");
+    			add_location(div10, file, 247, 2, 5784);
+    			attr_dev(div11, "class", "container svelte-tnywbs");
+    			add_location(div11, file, 246, 1, 5757);
+    			attr_dev(h31, "class", "svelte-tnywbs");
+    			add_location(h31, file, 291, 4, 7159);
+    			attr_dev(i3, "class", "fab fa-facebook-square");
+    			add_location(i3, file, 293, 11, 7247);
+    			attr_dev(span3, "class", "svelte-tnywbs");
+    			add_location(span3, file, 293, 5, 7241);
+    			attr_dev(i4, "class", "fab fa-google-plus-square");
+    			add_location(i4, file, 294, 11, 7305);
+    			attr_dev(span4, "class", "svelte-tnywbs");
+    			add_location(span4, file, 294, 5, 7299);
+    			attr_dev(i5, "class", "fab fa-twitter-square");
+    			add_location(i5, file, 295, 11, 7366);
+    			attr_dev(span5, "class", "svelte-tnywbs");
+    			add_location(span5, file, 295, 5, 7360);
+    			attr_dev(div12, "class", "d-flex justify-content-end social_icon svelte-tnywbs");
+    			add_location(div12, file, 292, 4, 7182);
+    			attr_dev(div13, "class", "card-header svelte-tnywbs");
+    			add_location(div13, file, 290, 3, 7128);
+    			attr_dev(i6, "class", "fas fa-user-tie");
+    			add_location(i6, file, 304, 38, 7664);
+    			attr_dev(span6, "class", "input-group-text svelte-tnywbs");
+    			add_location(span6, file, 304, 7, 7633);
+    			attr_dev(div14, "class", "input-group-prepend svelte-tnywbs");
+    			add_location(div14, file, 303, 6, 7591);
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "id", "register_username");
+    			attr_dev(input2, "class", "form-control svelte-tnywbs");
+    			attr_dev(input2, "placeholder", "Username");
+    			add_location(input2, file, 306, 6, 7724);
+    			attr_dev(div15, "class", "input-group form-group");
+    			add_location(div15, file, 302, 20, 7547);
+    			attr_dev(i7, "class", "fas fa-key");
+    			add_location(i7, file, 311, 38, 7999);
+    			attr_dev(span7, "class", "input-group-text svelte-tnywbs");
+    			add_location(span7, file, 311, 7, 7968);
+    			attr_dev(div16, "class", "input-group-prepend svelte-tnywbs");
+    			add_location(div16, file, 310, 6, 7926);
+    			attr_dev(input3, "id", "register_password");
+    			attr_dev(input3, "type", "password");
+    			attr_dev(input3, "class", "form-control svelte-tnywbs");
+    			attr_dev(input3, "placeholder", "password");
+    			add_location(input3, file, 313, 6, 8054);
+    			attr_dev(div17, "class", "input-group form-group");
+    			add_location(div17, file, 309, 20, 7882);
+    			attr_dev(button1, "class", "btn btn-info svelte-tnywbs");
+    			add_location(button1, file, 317, 6, 8232);
+    			attr_dev(div18, "class", "form-group");
+    			add_location(div18, file, 316, 20, 8200);
+    			attr_dev(form1, "action", "");
+    			add_location(form1, file, 299, 4, 7467);
+    			attr_dev(div19, "class", "card-body");
+    			add_location(div19, file, 298, 3, 7438);
+    			attr_dev(div20, "class", "card svelte-tnywbs");
+    			add_location(div20, file, 289, 2, 7105);
+    			attr_dev(div21, "class", "d-flex justify-content-center h-100");
+    			add_location(div21, file, 288, 1, 7052);
+    			attr_dev(div22, "class", "container svelte-tnywbs");
+    			add_location(div22, file, 287, 1, 7026);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, link0, anchor);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, link1, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, div14, anchor);
-    			append_dev(div14, div13);
-    			append_dev(div13, div12);
-    			append_dev(div12, div1);
-    			append_dev(div1, h3);
+    			insert_dev(target, div11, anchor);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, div1);
+    			append_dev(div1, h30);
     			append_dev(div1, t3);
     			append_dev(div1, div0);
     			append_dev(div0, span0);
@@ -2738,42 +2634,69 @@ var app = (function () {
     			append_dev(div0, t5);
     			append_dev(div0, span2);
     			append_dev(span2, i2);
-    			append_dev(div12, t6);
-    			append_dev(div12, div8);
-    			append_dev(div8, form);
-    			append_dev(form, div3);
-    			append_dev(div3, div2);
-    			append_dev(div2, span3);
-    			append_dev(span3, i3);
-    			append_dev(div3, t7);
-    			append_dev(div3, input0);
-    			append_dev(form, t8);
-    			append_dev(form, div5);
-    			append_dev(div5, div4);
-    			append_dev(div4, span4);
-    			append_dev(span4, i4);
-    			append_dev(div5, t9);
-    			append_dev(div5, input1);
-    			append_dev(form, t10);
-    			append_dev(form, div6);
-    			append_dev(div6, input2);
-    			append_dev(div6, t11);
-    			append_dev(form, t12);
-    			append_dev(form, div7);
-    			append_dev(div7, input3);
-    			append_dev(div12, t13);
-    			append_dev(div12, div11);
-    			append_dev(div11, div9);
+    			append_dev(div9, t6);
+    			append_dev(div9, div5);
+    			append_dev(div5, form0);
+    			append_dev(form0, div2);
+    			append_dev(div2, label0);
+    			append_dev(div2, t8);
+    			append_dev(div2, input0);
+    			append_dev(form0, t9);
+    			append_dev(form0, div3);
+    			append_dev(div3, label1);
+    			append_dev(div3, t11);
+    			append_dev(div3, input1);
+    			append_dev(form0, t12);
+    			append_dev(form0, div4);
+    			append_dev(div4, button0);
     			append_dev(div9, t14);
-    			append_dev(div9, a0);
-    			append_dev(div11, t16);
-    			append_dev(div11, div10);
-    			append_dev(div10, a1);
+    			append_dev(div9, div8);
+    			append_dev(div8, div6);
+    			append_dev(div6, t15);
+    			append_dev(div6, a0);
+    			append_dev(div8, t17);
+    			append_dev(div8, div7);
+    			append_dev(div7, a1);
+    			insert_dev(target, t19, anchor);
+    			insert_dev(target, div22, anchor);
+    			append_dev(div22, div21);
+    			append_dev(div21, div20);
+    			append_dev(div20, div13);
+    			append_dev(div13, h31);
+    			append_dev(div13, t21);
+    			append_dev(div13, div12);
+    			append_dev(div12, span3);
+    			append_dev(span3, i3);
+    			append_dev(div12, t22);
+    			append_dev(div12, span4);
+    			append_dev(span4, i4);
+    			append_dev(div12, t23);
+    			append_dev(div12, span5);
+    			append_dev(span5, i5);
+    			append_dev(div20, t24);
+    			append_dev(div20, div19);
+    			append_dev(div19, form1);
+    			append_dev(form1, div15);
+    			append_dev(div15, div14);
+    			append_dev(div14, span6);
+    			append_dev(span6, i6);
+    			append_dev(div15, t25);
+    			append_dev(div15, input2);
+    			append_dev(form1, t26);
+    			append_dev(form1, div17);
+    			append_dev(div17, div16);
+    			append_dev(div16, span7);
+    			append_dev(span7, i7);
+    			append_dev(div17, t27);
+    			append_dev(div17, input3);
+    			append_dev(form1, t28);
+    			append_dev(form1, div18);
+    			append_dev(div18, button1);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(form, "submit", /*handleLogin*/ ctx[8], false, false, false),
-    					listen_dev(a0, "click", prevent_default(/*click_handler_4*/ ctx[20]), false, true, false)
+    					listen_dev(form0, "submit", /*handleLogin*/ ctx[8], false, false, false),
+    					listen_dev(form1, "submit", /*handleRegister*/ ctx[9], false, false, false)
     				];
 
     				mounted = true;
@@ -2787,7 +2710,9 @@ var app = (function () {
     			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(link1);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(div14);
+    			if (detaching) detach_dev(div11);
+    			if (detaching) detach_dev(t19);
+    			if (detaching) detach_dev(div22);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -2795,46 +2720,45 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1.name,
-    		type: "if",
-    		source: "(241:34) ",
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(240:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (188:3) {#if activePage == "home"}
+    // (186:3) {#if bool}
     function create_if_block(ctx) {
     	let link;
     	let t0;
     	let div5;
+    	let div1;
     	let div0;
     	let t1_value = /*user*/ ctx[0].username + "";
     	let t1;
-    	let p0;
-    	let t3;
-    	let div1;
-    	let input0;
+    	let t2;
+    	let button0;
     	let t4;
-    	let input1;
-    	let t5;
-    	let input2;
+    	let button1;
     	let t6;
-    	let div2;
-    	let p1;
+    	let button2;
     	let t8;
-    	let input3;
-    	let t9;
+    	let div2;
+    	let p;
+    	let t10;
+    	let input;
+    	let t11;
     	let div3;
     	let h20;
-    	let t11;
+    	let t13;
     	let each_blocks_1 = [];
     	let each0_lookup = new Map();
-    	let t12;
+    	let t14;
     	let div4;
     	let h21;
-    	let t14;
+    	let t16;
     	let each_blocks = [];
     	let each1_lookup = new Map();
     	let current;
@@ -2842,7 +2766,7 @@ var app = (function () {
     	let dispose;
     	let each_value_1 = /*todos*/ ctx[2].filter(func);
     	validate_each_argument(each_value_1);
-    	const get_key = ctx => /*todo*/ ctx[22].id;
+    	const get_key = ctx => /*todo*/ ctx[21].id;
     	validate_each_keys(ctx, each_value_1, get_each_context_1, get_key);
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -2853,7 +2777,7 @@ var app = (function () {
 
     	let each_value = /*todos*/ ctx[2].filter(func_1);
     	validate_each_argument(each_value);
-    	const get_key_1 = ctx => /*todo*/ ctx[22].id;
+    	const get_key_1 = ctx => /*todo*/ ctx[21].id;
     	validate_each_keys(ctx, each_value, get_each_context, get_key_1);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -2867,38 +2791,39 @@ var app = (function () {
     			link = element("link");
     			t0 = space();
     			div5 = element("div");
+    			div1 = element("div");
     			div0 = element("div");
     			t1 = text(t1_value);
-    			p0 = element("p");
-    			p0.textContent = "hi";
-    			t3 = space();
-    			div1 = element("div");
-    			input0 = element("input");
+    			t2 = space();
+    			button0 = element("button");
+    			button0.textContent = "Active Todos";
     			t4 = space();
-    			input1 = element("input");
-    			t5 = space();
-    			input2 = element("input");
+    			button1 = element("button");
+    			button1.textContent = "Deleted Todos";
     			t6 = space();
-    			div2 = element("div");
-    			p1 = element("p");
-    			p1.textContent = "Todo's";
+    			button2 = element("button");
+    			button2.textContent = "Logout";
     			t8 = space();
-    			input3 = element("input");
-    			t9 = space();
+    			div2 = element("div");
+    			p = element("p");
+    			p.textContent = "MY LİST";
+    			t10 = space();
+    			input = element("input");
+    			t11 = space();
     			div3 = element("div");
     			h20 = element("h2");
     			h20.textContent = "todo";
-    			t11 = space();
+    			t13 = space();
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t12 = space();
+    			t14 = space();
     			div4 = element("div");
     			h21 = element("h2");
     			h21.textContent = "done";
-    			t14 = space();
+    			t16 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
@@ -2908,70 +2833,65 @@ var app = (function () {
     			attr_dev(link, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
     			attr_dev(link, "integrity", "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO");
     			attr_dev(link, "crossorigin", "anonymous");
-    			add_location(link, file, 189, 0, 3601);
-    			add_location(p0, file, 192, 21, 3861);
-    			add_location(div0, file, 192, 1, 3841);
-    			attr_dev(input0, "class", "btn btn-primary mr-2 b svelte-efj4qd");
-    			attr_dev(input0, "placeholder", "Active Todos ");
-    			add_location(input0, file, 194, 2, 3907);
-    			attr_dev(input1, "class", "btn btn-info mr-2 svelte-efj4qd");
-    			attr_dev(input1, "placeholder", "Deleted Todos");
-    			add_location(input1, file, 195, 2, 4006);
-    			attr_dev(input2, "class", "btn btn-danger svelte-efj4qd");
-    			attr_dev(input2, "placeholder", "Logout");
-    			add_location(input2, file, 196, 2, 4100);
-    			attr_dev(div1, "class", "form-group");
-    			add_location(div1, file, 193, 1, 3879);
-    			attr_dev(p1, "class", "text-default");
-    			add_location(p1, file, 198, 69, 4254);
+    			add_location(link, file, 187, 0, 3566);
+    			add_location(div0, file, 191, 2, 3877);
+    			attr_dev(button0, "class", "btn btn-primary mr-2 svelte-tnywbs");
+    			add_location(button0, file, 192, 2, 3907);
+    			attr_dev(button1, "class", "btn btn-info mr-2 svelte-tnywbs");
+    			add_location(button1, file, 193, 2, 3998);
+    			attr_dev(button2, "class", "btn btn-danger svelte-tnywbs");
+    			add_location(button2, file, 194, 2, 4088);
+    			attr_dev(div1, "class", "d-flex justify-content-around align-items-center mt-2");
+    			add_location(div1, file, 190, 1, 3806);
+    			attr_dev(p, "class", "text-default");
+    			add_location(p, file, 197, 69, 4240);
     			attr_dev(div2, "class", "d-flex justify-content-around align-items-center mt-2");
-    			add_location(div2, file, 198, 1, 4186);
-    			attr_dev(input3, "class", "new-todo svelte-efj4qd");
-    			attr_dev(input3, "placeholder", "what needs to be done?");
-    			add_location(input3, file, 200, 1, 4301);
-    			attr_dev(h20, "class", "svelte-efj4qd");
-    			add_location(h20, file, 207, 2, 4468);
-    			attr_dev(div3, "class", "left svelte-efj4qd");
-    			add_location(div3, file, 206, 1, 4446);
-    			attr_dev(h21, "class", "svelte-efj4qd");
-    			add_location(h21, file, 223, 2, 4882);
-    			attr_dev(div4, "class", "right svelte-efj4qd");
-    			add_location(div4, file, 222, 1, 4859);
-    			attr_dev(div5, "class", "board svelte-efj4qd");
-    			add_location(div5, file, 191, 3, 3819);
+    			add_location(div2, file, 197, 1, 4172);
+    			attr_dev(input, "class", "new-todo svelte-tnywbs");
+    			attr_dev(input, "placeholder", "what needs to be done?");
+    			add_location(input, file, 199, 1, 4288);
+    			attr_dev(h20, "class", "svelte-tnywbs");
+    			add_location(h20, file, 206, 2, 4455);
+    			attr_dev(div3, "class", "left svelte-tnywbs");
+    			add_location(div3, file, 205, 1, 4433);
+    			attr_dev(h21, "class", "svelte-tnywbs");
+    			add_location(h21, file, 222, 2, 4869);
+    			attr_dev(div4, "class", "right svelte-tnywbs");
+    			add_location(div4, file, 221, 1, 4846);
+    			attr_dev(div5, "class", "board svelte-tnywbs");
+    			add_location(div5, file, 189, 3, 3784);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, link, anchor);
     			insert_dev(target, t0, anchor);
     			insert_dev(target, div5, anchor);
-    			append_dev(div5, div0);
-    			append_dev(div0, t1);
-    			append_dev(div0, p0);
-    			append_dev(div5, t3);
     			append_dev(div5, div1);
-    			append_dev(div1, input0);
+    			append_dev(div1, div0);
+    			append_dev(div0, t1);
+    			append_dev(div1, t2);
+    			append_dev(div1, button0);
     			append_dev(div1, t4);
-    			append_dev(div1, input1);
-    			append_dev(div1, t5);
-    			append_dev(div1, input2);
-    			append_dev(div5, t6);
-    			append_dev(div5, div2);
-    			append_dev(div2, p1);
+    			append_dev(div1, button1);
+    			append_dev(div1, t6);
+    			append_dev(div1, button2);
     			append_dev(div5, t8);
-    			append_dev(div5, input3);
-    			append_dev(div5, t9);
+    			append_dev(div5, div2);
+    			append_dev(div2, p);
+    			append_dev(div5, t10);
+    			append_dev(div5, input);
+    			append_dev(div5, t11);
     			append_dev(div5, div3);
     			append_dev(div3, h20);
-    			append_dev(div3, t11);
+    			append_dev(div3, t13);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].m(div3, null);
     			}
 
-    			append_dev(div5, t12);
+    			append_dev(div5, t14);
     			append_dev(div5, div4);
     			append_dev(div4, h21);
-    			append_dev(div4, t14);
+    			append_dev(div4, t16);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(div4, null);
@@ -2981,10 +2901,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "click", /*handleActiveTodos*/ ctx[12], false, false, false),
-    					listen_dev(input1, "click", /*handleDeletedTodos*/ ctx[11], false, false, false),
-    					listen_dev(input2, "click", /*handleLogout*/ ctx[10], false, false, false),
-    					listen_dev(input3, "keydown", /*keydown_handler*/ ctx[13], false, false, false)
+    					listen_dev(button0, "click", /*handleActiveTodos*/ ctx[12], false, false, false),
+    					listen_dev(button1, "click", /*handleDeletedTodos*/ ctx[11], false, false, false),
+    					listen_dev(button2, "click", /*handleLogout*/ ctx[10], false, false, false),
+    					listen_dev(input, "keydown", /*keydown_handler*/ ctx[13], false, false, false)
     				];
 
     				mounted = true;
@@ -3061,19 +2981,19 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(188:3) {#if activePage == \\\"home\\\"}",
+    		source: "(186:3) {#if bool}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (209:2) {#each todos.filter(t => !t.done) as todo (todo.id)}
+    // (208:2) {#each todos.filter(t => !t.done) as todo (todo.id)}
     function create_each_block_1(key_1, ctx) {
     	let label;
     	let input;
     	let t0;
-    	let t1_value = /*todo*/ ctx[22].description + "";
+    	let t1_value = /*todo*/ ctx[21].description + "";
     	let t1;
     	let t2;
     	let button;
@@ -3087,15 +3007,15 @@ var app = (function () {
     	let dispose;
 
     	function input_change_handler() {
-    		/*input_change_handler*/ ctx[14].call(input, /*each_value_1*/ ctx[25], /*todo_index_1*/ ctx[26]);
+    		/*input_change_handler*/ ctx[14].call(input, /*each_value_1*/ ctx[24], /*todo_index_1*/ ctx[25]);
     	}
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[15](/*todo*/ ctx[22], ...args);
+    		return /*click_handler*/ ctx[15](/*todo*/ ctx[21], ...args);
     	}
 
     	function click_handler_1(...args) {
-    		return /*click_handler_1*/ ctx[16](/*todo*/ ctx[22], ...args);
+    		return /*click_handler_1*/ ctx[16](/*todo*/ ctx[21], ...args);
     	}
 
     	const block = {
@@ -3111,18 +3031,18 @@ var app = (function () {
     			button.textContent = "x";
     			t4 = space();
     			attr_dev(input, "type", "checkbox");
-    			attr_dev(input, "class", "svelte-efj4qd");
-    			add_location(input, file, 215, 4, 4695);
-    			attr_dev(button, "class", "svelte-efj4qd");
-    			add_location(button, file, 217, 4, 4771);
-    			attr_dev(label, "class", "svelte-efj4qd");
-    			add_location(label, file, 209, 3, 4542);
+    			attr_dev(input, "class", "svelte-tnywbs");
+    			add_location(input, file, 214, 4, 4682);
+    			attr_dev(button, "class", "svelte-tnywbs");
+    			add_location(button, file, 216, 4, 4758);
+    			attr_dev(label, "class", "svelte-tnywbs");
+    			add_location(label, file, 208, 3, 4529);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
     			append_dev(label, input);
-    			input.checked = /*todo*/ ctx[22].done;
+    			input.checked = /*todo*/ ctx[21].done;
     			append_dev(label, t0);
     			append_dev(label, t1);
     			append_dev(label, t2);
@@ -3144,10 +3064,10 @@ var app = (function () {
     			ctx = new_ctx;
 
     			if (dirty & /*todos*/ 4) {
-    				input.checked = /*todo*/ ctx[22].done;
+    				input.checked = /*todo*/ ctx[21].done;
     			}
 
-    			if ((!current || dirty & /*todos*/ 4) && t1_value !== (t1_value = /*todo*/ ctx[22].description + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*todos*/ 4) && t1_value !== (t1_value = /*todo*/ ctx[21].description + "")) set_data_dev(t1, t1_value);
     		},
     		r: function measure() {
     			rect = label.getBoundingClientRect();
@@ -3166,7 +3086,7 @@ var app = (function () {
 
     			add_render_callback(() => {
     				if (label_outro) label_outro.end(1);
-    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[4], { key: /*todo*/ ctx[22].id });
+    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[4], { key: /*todo*/ ctx[21].id });
     				label_intro.start();
     			});
 
@@ -3174,7 +3094,7 @@ var app = (function () {
     		},
     		o: function outro(local) {
     			if (label_intro) label_intro.invalidate();
-    			label_outro = create_out_transition(label, /*send*/ ctx[3], { key: /*todo*/ ctx[22].id });
+    			label_outro = create_out_transition(label, /*send*/ ctx[3], { key: /*todo*/ ctx[21].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -3189,19 +3109,19 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(209:2) {#each todos.filter(t => !t.done) as todo (todo.id)}",
+    		source: "(208:2) {#each todos.filter(t => !t.done) as todo (todo.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (225:2) {#each todos.filter(t => t.done) as todo (todo.id)}
+    // (224:2) {#each todos.filter(t => t.done) as todo (todo.id)}
     function create_each_block(key_1, ctx) {
     	let label;
     	let input;
     	let t0;
-    	let t1_value = /*todo*/ ctx[22].description + "";
+    	let t1_value = /*todo*/ ctx[21].description + "";
     	let t1;
     	let t2;
     	let button;
@@ -3215,15 +3135,15 @@ var app = (function () {
     	let dispose;
 
     	function input_change_handler_1() {
-    		/*input_change_handler_1*/ ctx[17].call(input, /*each_value*/ ctx[23], /*todo_index*/ ctx[24]);
+    		/*input_change_handler_1*/ ctx[17].call(input, /*each_value*/ ctx[22], /*todo_index*/ ctx[23]);
     	}
 
     	function click_handler_2(...args) {
-    		return /*click_handler_2*/ ctx[18](/*todo*/ ctx[22], ...args);
+    		return /*click_handler_2*/ ctx[18](/*todo*/ ctx[21], ...args);
     	}
 
     	function click_handler_3(...args) {
-    		return /*click_handler_3*/ ctx[19](/*todo*/ ctx[22], ...args);
+    		return /*click_handler_3*/ ctx[19](/*todo*/ ctx[21], ...args);
     	}
 
     	const block = {
@@ -3239,18 +3159,18 @@ var app = (function () {
     			button.textContent = "x";
     			t4 = space();
     			attr_dev(input, "type", "checkbox");
-    			attr_dev(input, "class", "svelte-efj4qd");
-    			add_location(input, file, 232, 4, 5114);
-    			attr_dev(button, "class", "svelte-efj4qd");
-    			add_location(button, file, 234, 4, 5190);
-    			attr_dev(label, "class", "svelte-efj4qd");
-    			add_location(label, file, 225, 3, 4955);
+    			attr_dev(input, "class", "svelte-tnywbs");
+    			add_location(input, file, 231, 4, 5101);
+    			attr_dev(button, "class", "svelte-tnywbs");
+    			add_location(button, file, 233, 4, 5177);
+    			attr_dev(label, "class", "svelte-tnywbs");
+    			add_location(label, file, 224, 3, 4942);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
     			append_dev(label, input);
-    			input.checked = /*todo*/ ctx[22].done;
+    			input.checked = /*todo*/ ctx[21].done;
     			append_dev(label, t0);
     			append_dev(label, t1);
     			append_dev(label, t2);
@@ -3272,10 +3192,10 @@ var app = (function () {
     			ctx = new_ctx;
 
     			if (dirty & /*todos*/ 4) {
-    				input.checked = /*todo*/ ctx[22].done;
+    				input.checked = /*todo*/ ctx[21].done;
     			}
 
-    			if ((!current || dirty & /*todos*/ 4) && t1_value !== (t1_value = /*todo*/ ctx[22].description + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*todos*/ 4) && t1_value !== (t1_value = /*todo*/ ctx[21].description + "")) set_data_dev(t1, t1_value);
     		},
     		r: function measure() {
     			rect = label.getBoundingClientRect();
@@ -3294,7 +3214,7 @@ var app = (function () {
 
     			add_render_callback(() => {
     				if (label_outro) label_outro.end(1);
-    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[4], { key: /*todo*/ ctx[22].id });
+    				if (!label_intro) label_intro = create_in_transition(label, /*receive*/ ctx[4], { key: /*todo*/ ctx[21].id });
     				label_intro.start();
     			});
 
@@ -3302,7 +3222,7 @@ var app = (function () {
     		},
     		o: function outro(local) {
     			if (label_intro) label_intro.invalidate();
-    			label_outro = create_out_transition(label, /*send*/ ctx[3], { key: /*todo*/ ctx[22].id });
+    			label_outro = create_out_transition(label, /*send*/ ctx[3], { key: /*todo*/ ctx[21].id });
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -3317,7 +3237,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(225:2) {#each todos.filter(t => t.done) as todo (todo.id)}",
+    		source: "(224:2) {#each todos.filter(t => t.done) as todo (todo.id)}",
     		ctx
     	});
 
@@ -3329,37 +3249,30 @@ var app = (function () {
     	let current_block_type_index;
     	let if_block;
     	let current;
-    	const if_block_creators = [create_if_block, create_if_block_1, create_if_block_2];
+    	const if_block_creators = [create_if_block, create_else_block];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
-    		if (/*activePage*/ ctx[1] == "home") return 0;
-    		if (/*activePage*/ ctx[1] == "login") return 1;
-    		if (/*activePage*/ ctx[1] == "register") return 2;
-    		return -1;
+    		if (/*bool*/ ctx[1]) return 0;
+    		return 1;
     	}
 
-    	if (~(current_block_type_index = select_block_type(ctx))) {
-    		if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    	}
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
     	const block = {
     		c: function create() {
     			main = element("main");
-    			if (if_block) if_block.c();
-    			attr_dev(main, "class", "svelte-efj4qd");
-    			add_location(main, file, 183, 0, 3513);
+    			if_block.c();
+    			attr_dev(main, "class", "svelte-tnywbs");
+    			add_location(main, file, 181, 0, 3494);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-
-    			if (~current_block_type_index) {
-    				if_blocks[current_block_type_index].m(main, null);
-    			}
-
+    			if_blocks[current_block_type_index].m(main, null);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
@@ -3367,33 +3280,24 @@ var app = (function () {
     			current_block_type_index = select_block_type(ctx);
 
     			if (current_block_type_index === previous_block_index) {
-    				if (~current_block_type_index) {
-    					if_blocks[current_block_type_index].p(ctx, dirty);
-    				}
+    				if_blocks[current_block_type_index].p(ctx, dirty);
     			} else {
-    				if (if_block) {
-    					group_outros();
+    				group_outros();
 
-    					transition_out(if_blocks[previous_block_index], 1, 1, () => {
-    						if_blocks[previous_block_index] = null;
-    					});
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
 
-    					check_outros();
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
     				}
 
-    				if (~current_block_type_index) {
-    					if_block = if_blocks[current_block_type_index];
-
-    					if (!if_block) {
-    						if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
-    						if_block.c();
-    					}
-
-    					transition_in(if_block, 1);
-    					if_block.m(main, null);
-    				} else {
-    					if_block = null;
-    				}
+    				transition_in(if_block, 1);
+    				if_block.m(main, null);
     			}
     		},
     		i: function intro(local) {
@@ -3407,10 +3311,7 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
-
-    			if (~current_block_type_index) {
-    				if_blocks[current_block_type_index].d();
-    			}
+    			if_blocks[current_block_type_index].d();
     		}
     	};
 
@@ -3430,7 +3331,7 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let user = null;
-    	let activePage = "login";
+    	let bool = false;
 
     	if (localStorage.getItem("user")) {
     		user = JSON.parse(localStorage.getItem("user"));
@@ -3500,8 +3401,8 @@ var app = (function () {
     				$$invalidate(0, user = response.data.user);
     				localStorage.setItem("user", JSON.stringify(user));
     				console.log(user);
+    				$$invalidate(1, bool = true);
     				alert(user.id);
-    				$$invalidate(1, activePage = "home");
 
     				if (user) {
     					axios$1.get("/todos/" + user.id).then(response => {
@@ -3594,7 +3495,6 @@ var app = (function () {
 
     	const click_handler_2 = todo => remove(todo);
     	const click_handler_3 = todo => changeStatus(todo.id, 0);
-    	const click_handler_4 = () => $$invalidate(1, activePage = "register");
 
     	$$self.$capture_state = () => ({
     		axios: axios$1,
@@ -3602,7 +3502,7 @@ var app = (function () {
     		crossfade,
     		flip,
     		user,
-    		activePage,
+    		bool,
     		send,
     		receive,
     		todos,
@@ -3619,7 +3519,7 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ("user" in $$props) $$invalidate(0, user = $$props.user);
-    		if ("activePage" in $$props) $$invalidate(1, activePage = $$props.activePage);
+    		if ("bool" in $$props) $$invalidate(1, bool = $$props.bool);
     		if ("todos" in $$props) $$invalidate(2, todos = $$props.todos);
     		if ("uid" in $$props) uid = $$props.uid;
     	};
@@ -3630,7 +3530,7 @@ var app = (function () {
 
     	return [
     		user,
-    		activePage,
+    		bool,
     		todos,
     		send,
     		receive,
@@ -3648,8 +3548,7 @@ var app = (function () {
     		click_handler_1,
     		input_change_handler_1,
     		click_handler_2,
-    		click_handler_3,
-    		click_handler_4
+    		click_handler_3
     	];
     }
 

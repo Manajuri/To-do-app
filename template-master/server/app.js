@@ -22,12 +22,13 @@ app.use(express.static('public'))
 app.post('/account/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  const email = req.body.username;
   let db;
   if(db = new sqlite3.Database('data.db')){
     console.log("baglandi")
   }
-  db.get("SELECT * FROM users WHERE username = ? AND password = ?", [
-      username, password
+  db.get("SELECT * FROM users WHERE (username = ? OR email = ?)  AND password = ?", [
+      username, email, password
   ], (err, row) => {
       if (!row) { 
         console.log("Yanlis");
@@ -53,14 +54,15 @@ app.post('/account/login', (req, res) => {
 app.post('/account/register', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  const email = req.body.email;
   //const token = makeToken(45);
 
   if(db = new sqlite3.Database('data.db')){
     console.log("baglandi");
   }
   
-  db.all("INSERT INTO users (username, password) VALUES (?, ?)", [
-      username, password
+  db.all("INSERT INTO users (username, password, email) VALUES (?, ?, ?)", [
+      username, password,email
   ], (err) => {
       if (err) {
           console.log(err);

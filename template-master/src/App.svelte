@@ -93,10 +93,13 @@
 		event.preventDefault();
 		const username = document.getElementById("username").value;
 		const password = document.getElementById("password").value;
-
+		const email = document.getElementById("username").value;
+		console.log(email);
 		axios.post("/account/login", {
 			username: username,
-			password: password
+			email: email,
+			password: password,
+			
 		}).then(response => {
 			if (response.data.success) {
 				user = response.data.user;
@@ -144,15 +147,17 @@
 		event.preventDefault();
 		const username = document.getElementById("register_username").value;
 		const password = document.getElementById("register_password").value;
+		const email = document.getElementById("register_email").value;
 
 		axios.post("/account/register", {
 			username: username,
-			password: password
+			password: password,
+			email: email
 		}).then(response => {
 			console.log(response.data);
 			if (response.data.success) {
 				activePage = "home";
-				alert("You can login");
+				alert(email);
 			}
 		});
 	}
@@ -353,7 +358,15 @@
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
 						<input id="register_password" type="password" class="form-control" placeholder="password">
-                    </div>
+					</div>
+					
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+						</div>
+						<input type="text" id="register_email" class="form-control" placeholder="E-mail">
+					</div>
+					
 				
                     <div class="form-group">
 						<input type="submit" value="Register" class="btn float-right login_btn">

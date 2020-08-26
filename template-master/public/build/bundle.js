@@ -2321,15 +2321,15 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (332:36) 
+    // (337:36) 
     function create_if_block_2(ctx) {
+    	let div11;
+    	let div10;
     	let div9;
-    	let div8;
-    	let div7;
     	let div0;
     	let h3;
     	let t1;
-    	let div6;
+    	let div8;
     	let form;
     	let div2;
     	let div1;
@@ -2345,21 +2345,28 @@ var app = (function () {
     	let t4;
     	let input1;
     	let t5;
+    	let div6;
     	let div5;
+    	let span2;
+    	let i2;
+    	let t6;
     	let input2;
+    	let t7;
+    	let div7;
+    	let input3;
     	let mounted;
     	let dispose;
 
     	const block = {
     		c: function create() {
+    			div11 = element("div");
+    			div10 = element("div");
     			div9 = element("div");
-    			div8 = element("div");
-    			div7 = element("div");
     			div0 = element("div");
     			h3 = element("h3");
     			h3.textContent = "Register";
     			t1 = space();
-    			div6 = element("div");
+    			div8 = element("div");
     			form = element("form");
     			div2 = element("div");
     			div1 = element("div");
@@ -2375,64 +2382,84 @@ var app = (function () {
     			t4 = space();
     			input1 = element("input");
     			t5 = space();
+    			div6 = element("div");
     			div5 = element("div");
+    			span2 = element("span");
+    			i2 = element("i");
+    			t6 = space();
     			input2 = element("input");
+    			t7 = space();
+    			div7 = element("div");
+    			input3 = element("input");
     			attr_dev(h3, "class", "svelte-1vly1ej");
-    			add_location(h3, file, 336, 4, 8100);
+    			add_location(h3, file, 341, 4, 8279);
     			attr_dev(div0, "class", "card-header svelte-1vly1ej");
-    			add_location(div0, file, 335, 3, 8069);
+    			add_location(div0, file, 340, 3, 8248);
     			attr_dev(i0, "class", "fas fa-user-tie");
-    			add_location(i0, file, 345, 38, 8365);
+    			add_location(i0, file, 350, 38, 8544);
     			attr_dev(span0, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span0, file, 345, 7, 8334);
+    			add_location(span0, file, 350, 7, 8513);
     			attr_dev(div1, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div1, file, 344, 6, 8292);
+    			add_location(div1, file, 349, 6, 8471);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "id", "register_username");
     			attr_dev(input0, "class", "form-control svelte-1vly1ej");
     			attr_dev(input0, "placeholder", "Username");
-    			add_location(input0, file, 347, 6, 8425);
+    			add_location(input0, file, 352, 6, 8604);
     			attr_dev(div2, "class", "input-group form-group");
-    			add_location(div2, file, 343, 20, 8248);
+    			add_location(div2, file, 348, 20, 8427);
     			attr_dev(i1, "class", "fas fa-key");
-    			add_location(i1, file, 352, 38, 8700);
+    			add_location(i1, file, 357, 38, 8879);
     			attr_dev(span1, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span1, file, 352, 7, 8669);
+    			add_location(span1, file, 357, 7, 8848);
     			attr_dev(div3, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div3, file, 351, 6, 8627);
+    			add_location(div3, file, 356, 6, 8806);
     			attr_dev(input1, "id", "register_password");
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "class", "form-control svelte-1vly1ej");
     			attr_dev(input1, "placeholder", "password");
-    			add_location(input1, file, 354, 6, 8755);
+    			add_location(input1, file, 359, 6, 8934);
     			attr_dev(div4, "class", "input-group form-group");
-    			add_location(div4, file, 350, 20, 8583);
-    			attr_dev(input2, "type", "submit");
-    			input2.value = "Register";
-    			attr_dev(input2, "class", "btn float-right login_btn svelte-1vly1ej");
-    			add_location(input2, file, 358, 6, 8933);
-    			attr_dev(div5, "class", "form-group");
-    			add_location(div5, file, 357, 20, 8901);
+    			add_location(div4, file, 355, 20, 8762);
+    			attr_dev(i2, "class", "fas fa-envelope");
+    			add_location(i2, file, 364, 38, 9168);
+    			attr_dev(span2, "class", "input-group-text svelte-1vly1ej");
+    			add_location(span2, file, 364, 7, 9137);
+    			attr_dev(div5, "class", "input-group-prepend svelte-1vly1ej");
+    			add_location(div5, file, 363, 6, 9095);
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "id", "register_email");
+    			attr_dev(input2, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input2, "placeholder", "E-mail");
+    			add_location(input2, file, 366, 6, 9228);
+    			attr_dev(div6, "class", "input-group form-group");
+    			add_location(div6, file, 362, 5, 9051);
+    			attr_dev(input3, "type", "submit");
+    			input3.value = "Register";
+    			attr_dev(input3, "class", "btn float-right login_btn svelte-1vly1ej");
+    			add_location(input3, file, 371, 6, 9389);
+    			attr_dev(div7, "class", "form-group");
+    			add_location(div7, file, 370, 20, 9357);
     			attr_dev(form, "action", "");
-    			add_location(form, file, 340, 4, 8168);
-    			attr_dev(div6, "class", "card-body");
-    			add_location(div6, file, 339, 3, 8139);
-    			attr_dev(div7, "class", "card svelte-1vly1ej");
-    			add_location(div7, file, 334, 2, 8046);
-    			attr_dev(div8, "class", "d-flex justify-content-center h-100");
-    			add_location(div8, file, 333, 1, 7993);
-    			attr_dev(div9, "class", "container svelte-1vly1ej");
-    			add_location(div9, file, 332, 1, 7967);
+    			add_location(form, file, 345, 4, 8347);
+    			attr_dev(div8, "class", "card-body");
+    			add_location(div8, file, 344, 3, 8318);
+    			attr_dev(div9, "class", "card svelte-1vly1ej");
+    			add_location(div9, file, 339, 2, 8225);
+    			attr_dev(div10, "class", "d-flex justify-content-center h-100");
+    			add_location(div10, file, 338, 1, 8172);
+    			attr_dev(div11, "class", "container svelte-1vly1ej");
+    			add_location(div11, file, 337, 1, 8146);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div9, anchor);
-    			append_dev(div9, div8);
-    			append_dev(div8, div7);
-    			append_dev(div7, div0);
+    			insert_dev(target, div11, anchor);
+    			append_dev(div11, div10);
+    			append_dev(div10, div9);
+    			append_dev(div9, div0);
     			append_dev(div0, h3);
-    			append_dev(div7, t1);
-    			append_dev(div7, div6);
-    			append_dev(div6, form);
+    			append_dev(div9, t1);
+    			append_dev(div9, div8);
+    			append_dev(div8, form);
     			append_dev(form, div2);
     			append_dev(div2, div1);
     			append_dev(div1, span0);
@@ -2447,8 +2474,15 @@ var app = (function () {
     			append_dev(div4, t4);
     			append_dev(div4, input1);
     			append_dev(form, t5);
-    			append_dev(form, div5);
-    			append_dev(div5, input2);
+    			append_dev(form, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, span2);
+    			append_dev(span2, i2);
+    			append_dev(div6, t6);
+    			append_dev(div6, input2);
+    			append_dev(form, t7);
+    			append_dev(form, div7);
+    			append_dev(div7, input3);
 
     			if (!mounted) {
     				dispose = listen_dev(form, "submit", /*handleRegister*/ ctx[10], false, false, false);
@@ -2459,7 +2493,7 @@ var app = (function () {
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div9);
+    			if (detaching) detach_dev(div11);
     			mounted = false;
     			dispose();
     		}
@@ -2469,14 +2503,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(332:36) ",
+    		source: "(337:36) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (286:34) 
+    // (291:34) 
     function create_if_block_1(ctx) {
     	let link0;
     	let t0;
@@ -2555,65 +2589,65 @@ var app = (function () {
     			attr_dev(link0, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
     			attr_dev(link0, "integrity", "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO");
     			attr_dev(link0, "crossorigin", "anonymous");
-    			add_location(link0, file, 287, 1, 6278);
+    			add_location(link0, file, 292, 1, 6457);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "https://use.fontawesome.com/releases/v5.3.1/css/all.css");
     			attr_dev(link1, "integrity", "sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU");
     			attr_dev(link1, "crossorigin", "anonymous");
-    			add_location(link1, file, 290, 1, 6526);
+    			add_location(link1, file, 295, 1, 6705);
     			attr_dev(h3, "class", "svelte-1vly1ej");
-    			add_location(h3, file, 296, 5, 6863);
+    			add_location(h3, file, 301, 5, 7042);
     			attr_dev(div0, "class", "card-header svelte-1vly1ej");
-    			add_location(div0, file, 295, 4, 6831);
+    			add_location(div0, file, 300, 4, 7010);
     			attr_dev(i0, "class", "fas fa-user");
-    			add_location(i0, file, 303, 39, 7100);
+    			add_location(i0, file, 308, 39, 7279);
     			attr_dev(span0, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span0, file, 303, 8, 7069);
+    			add_location(span0, file, 308, 8, 7248);
     			attr_dev(div1, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div1, file, 302, 7, 7025);
+    			add_location(div1, file, 307, 7, 7204);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "id", "username");
     			attr_dev(input0, "class", "form-control svelte-1vly1ej");
     			attr_dev(input0, "placeholder", "username");
-    			add_location(input0, file, 305, 7, 7158);
+    			add_location(input0, file, 310, 7, 7337);
     			attr_dev(div2, "class", "input-group form-group");
-    			add_location(div2, file, 301, 6, 6980);
+    			add_location(div2, file, 306, 6, 7159);
     			attr_dev(i1, "class", "fas fa-key");
-    			add_location(i1, file, 310, 39, 7385);
+    			add_location(i1, file, 315, 39, 7564);
     			attr_dev(span1, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span1, file, 310, 8, 7354);
+    			add_location(span1, file, 315, 8, 7533);
     			attr_dev(div3, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div3, file, 309, 7, 7311);
+    			add_location(div3, file, 314, 7, 7490);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "id", "password");
     			attr_dev(input1, "class", "form-control svelte-1vly1ej");
     			attr_dev(input1, "placeholder", "password");
-    			add_location(input1, file, 312, 7, 7442);
+    			add_location(input1, file, 317, 7, 7621);
     			attr_dev(div4, "class", "input-group form-group");
-    			add_location(div4, file, 308, 6, 7266);
+    			add_location(div4, file, 313, 6, 7445);
     			attr_dev(input2, "type", "submit");
     			input2.value = "Login";
     			attr_dev(input2, "class", "btn float-right login_btn svelte-1vly1ej");
-    			add_location(input2, file, 315, 7, 7579);
+    			add_location(input2, file, 320, 7, 7758);
     			attr_dev(div5, "class", "form-group");
-    			add_location(div5, file, 314, 6, 7545);
+    			add_location(div5, file, 319, 6, 7724);
     			attr_dev(form, "action", "");
-    			add_location(form, file, 300, 5, 6932);
+    			add_location(form, file, 305, 5, 7111);
     			attr_dev(div6, "class", "card-body");
-    			add_location(div6, file, 299, 4, 6902);
+    			add_location(div6, file, 304, 4, 7081);
     			attr_dev(a, "href", "#");
     			attr_dev(a, "class", "svelte-1vly1ej");
-    			add_location(a, file, 321, 28, 7805);
+    			add_location(a, file, 326, 28, 7984);
     			attr_dev(div7, "class", "d-flex justify-content-center links svelte-1vly1ej");
-    			add_location(div7, file, 320, 5, 7726);
+    			add_location(div7, file, 325, 5, 7905);
     			attr_dev(div8, "class", "card-footer");
-    			add_location(div8, file, 319, 4, 7694);
+    			add_location(div8, file, 324, 4, 7873);
     			attr_dev(div9, "class", "card svelte-1vly1ej");
-    			add_location(div9, file, 294, 3, 6807);
+    			add_location(div9, file, 299, 3, 6986);
     			attr_dev(div10, "class", "d-flex justify-content-center h-100");
-    			add_location(div10, file, 293, 2, 6753);
+    			add_location(div10, file, 298, 2, 6932);
     			attr_dev(div11, "class", "container svelte-1vly1ej");
-    			add_location(div11, file, 292, 1, 6726);
+    			add_location(div11, file, 297, 1, 6905);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, link0, anchor);
@@ -2677,14 +2711,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(286:34) ",
+    		source: "(291:34) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (212:3) {#if activePage == "todo"}
+    // (217:3) {#if activePage == "todo"}
     function create_if_block(ctx) {
     	let link;
     	let t0;
@@ -2819,41 +2853,41 @@ var app = (function () {
     			attr_dev(link, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
     			attr_dev(link, "integrity", "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO");
     			attr_dev(link, "crossorigin", "anonymous");
-    			add_location(link, file, 213, 0, 4083);
-    			add_location(div0, file, 217, 2, 4394);
+    			add_location(link, file, 218, 0, 4262);
+    			add_location(div0, file, 222, 2, 4573);
     			attr_dev(button0, "class", "btn btn-primary mr-2 svelte-1vly1ej");
-    			add_location(button0, file, 218, 2, 4424);
+    			add_location(button0, file, 223, 2, 4603);
     			attr_dev(button1, "class", "btn btn-info mr-2 svelte-1vly1ej");
-    			add_location(button1, file, 219, 2, 4515);
+    			add_location(button1, file, 224, 2, 4694);
     			attr_dev(button2, "class", "btn btn-danger svelte-1vly1ej");
-    			add_location(button2, file, 220, 2, 4605);
+    			add_location(button2, file, 225, 2, 4784);
     			attr_dev(input0, "type", "submit");
     			input0.value = "Logout";
     			attr_dev(input0, "class", "btn btn-danger svelte-1vly1ej");
-    			add_location(input0, file, 221, 2, 4679);
+    			add_location(input0, file, 226, 2, 4858);
     			attr_dev(div1, "class", "d-flex justify-content-around align-items-center mt-2");
-    			add_location(div1, file, 216, 1, 4323);
+    			add_location(div1, file, 221, 1, 4502);
     			attr_dev(p, "class", "text-default");
-    			add_location(p, file, 224, 69, 4844);
+    			add_location(p, file, 229, 69, 5023);
     			attr_dev(div2, "class", "d-flex justify-content-around align-items-center mt-2");
-    			add_location(div2, file, 224, 1, 4776);
+    			add_location(div2, file, 229, 1, 4955);
     			attr_dev(input1, "class", "new-todo svelte-1vly1ej");
     			attr_dev(input1, "placeholder", "what needs to be done?");
-    			add_location(input1, file, 226, 1, 4892);
+    			add_location(input1, file, 231, 1, 5071);
     			attr_dev(h20, "class", "svelte-1vly1ej");
-    			add_location(h20, file, 233, 2, 5059);
+    			add_location(h20, file, 238, 2, 5238);
     			attr_dev(div3, "class", "left svelte-1vly1ej");
-    			add_location(div3, file, 232, 1, 5037);
+    			add_location(div3, file, 237, 1, 5216);
     			attr_dev(h21, "class", "svelte-1vly1ej");
-    			add_location(h21, file, 249, 2, 5473);
+    			add_location(h21, file, 254, 2, 5652);
     			attr_dev(div4, "class", "right svelte-1vly1ej");
-    			add_location(div4, file, 248, 1, 5450);
+    			add_location(div4, file, 253, 1, 5629);
     			attr_dev(h22, "class", "svelte-1vly1ej");
-    			add_location(h22, file, 266, 2, 5897);
+    			add_location(h22, file, 271, 2, 6076);
     			attr_dev(div5, "class", "right down svelte-1vly1ej");
-    			add_location(div5, file, 265, 1, 5869);
+    			add_location(div5, file, 270, 1, 6048);
     			attr_dev(div6, "class", "board svelte-1vly1ej");
-    			add_location(div6, file, 215, 3, 4301);
+    			add_location(div6, file, 220, 3, 4480);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, link, anchor);
@@ -3010,14 +3044,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(212:3) {#if activePage == \\\"todo\\\"}",
+    		source: "(217:3) {#if activePage == \\\"todo\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (235:2) {#each todos.filter(t => !t.done) as todo (todo.id)}
+    // (240:2) {#each todos.filter(t => !t.done) as todo (todo.id)}
     function create_each_block_2(key_1, ctx) {
     	let label;
     	let input;
@@ -3061,11 +3095,11 @@ var app = (function () {
     			t4 = space();
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-1vly1ej");
-    			add_location(input, file, 241, 4, 5286);
+    			add_location(input, file, 246, 4, 5465);
     			attr_dev(button, "class", "svelte-1vly1ej");
-    			add_location(button, file, 243, 4, 5362);
+    			add_location(button, file, 248, 4, 5541);
     			attr_dev(label, "class", "svelte-1vly1ej");
-    			add_location(label, file, 235, 3, 5133);
+    			add_location(label, file, 240, 3, 5312);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -3138,14 +3172,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(235:2) {#each todos.filter(t => !t.done) as todo (todo.id)}",
+    		source: "(240:2) {#each todos.filter(t => !t.done) as todo (todo.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (251:2) {#each todos.filter(t => t.done) as todo (todo.id)}
+    // (256:2) {#each todos.filter(t => t.done) as todo (todo.id)}
     function create_each_block_1(key_1, ctx) {
     	let label;
     	let input;
@@ -3189,11 +3223,11 @@ var app = (function () {
     			t4 = space();
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-1vly1ej");
-    			add_location(input, file, 258, 4, 5705);
+    			add_location(input, file, 263, 4, 5884);
     			attr_dev(button, "class", "svelte-1vly1ej");
-    			add_location(button, file, 260, 4, 5781);
+    			add_location(button, file, 265, 4, 5960);
     			attr_dev(label, "class", "svelte-1vly1ej");
-    			add_location(label, file, 251, 3, 5546);
+    			add_location(label, file, 256, 3, 5725);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -3266,14 +3300,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(251:2) {#each todos.filter(t => t.done) as todo (todo.id)}",
+    		source: "(256:2) {#each todos.filter(t => t.done) as todo (todo.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (268:2) {#each todoss.filter(t => t.done) as todo (todo.id)}
+    // (273:2) {#each todoss.filter(t => t.done) as todo (todo.id)}
     function create_each_block(key_1, ctx) {
     	let label;
     	let t0_value = /*todo*/ ctx[24].description + "";
@@ -3299,7 +3333,7 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(label, "class", "svelte-1vly1ej");
-    			add_location(label, file, 268, 3, 5979);
+    			add_location(label, file, 273, 3, 6158);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -3357,7 +3391,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(268:2) {#each todoss.filter(t => t.done) as todo (todo.id)}",
+    		source: "(273:2) {#each todoss.filter(t => t.done) as todo (todo.id)}",
     		ctx
     	});
 
@@ -3388,7 +3422,7 @@ var app = (function () {
     			main = element("main");
     			if (if_block) if_block.c();
     			attr_dev(main, "class", "svelte-1vly1ej");
-    			add_location(main, file, 207, 0, 3995);
+    			add_location(main, file, 212, 0, 4174);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3535,8 +3569,10 @@ var app = (function () {
     		event.preventDefault();
     		const username = document.getElementById("username").value;
     		const password = document.getElementById("password").value;
+    		const email = document.getElementById("username").value;
+    		console.log(email);
 
-    		axios$1.post("/account/login", { username, password }).then(response => {
+    		axios$1.post("/account/login", { username, email, password }).then(response => {
     			if (response.data.success) {
     				$$invalidate(0, user = response.data.user);
     				localStorage.setItem("user", JSON.stringify(user));
@@ -3581,13 +3617,14 @@ var app = (function () {
     		event.preventDefault();
     		const username = document.getElementById("register_username").value;
     		const password = document.getElementById("register_password").value;
+    		const email = document.getElementById("register_email").value;
 
-    		axios$1.post("/account/register", { username, password }).then(response => {
+    		axios$1.post("/account/register", { username, password, email }).then(response => {
     			console.log(response.data);
 
     			if (response.data.success) {
     				$$invalidate(2, activePage = "home");
-    				alert("You can login");
+    				alert(email);
     			}
     		});
     	}

@@ -105,8 +105,6 @@
 				user = response.data.user;
 				localStorage.setItem("user", JSON.stringify(user));
 				console.log(user);
-				
-				alert(user.id);
 				activePage = "todo";
 				if (user) {
 					axios.get("/todos/" + user.id).then(response => {
@@ -157,7 +155,7 @@
 			console.log(response.data);
 			if (response.data.success) {
 				activePage = "home";
-				alert(email);
+				alert("You can login");
 			}
 		});
 	}
@@ -217,10 +215,10 @@
    {#if activePage == "todo"}
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+<div class='background'>
    <div class='board'>
 	<div class="d-flex justify-content-around align-items-center mt-2">
-		<div>{user.username}</div>
+		<div class="name">{user.username}</div>
 		<button class="btn btn-primary mr-2" on:click={handleActiveTodos}>Active Todos</button>
 		<button class="btn btn-info mr-2" on:click={handleDeletedTodos}>Deleted Todos</button>
 		<button class="btn btn-danger" on:click={handleLogout}>Logout</button>
@@ -268,10 +266,11 @@
 		{/each}
 	</div>
 
-	<div class='right down'>
+	<div class='down'>
 		<h2>delete todos</h2>
 		{#each todoss.filter(t => t.done) as todo (todo.id)}
 			<label
+				class="color"
 				on:click="{() => changeStatus(todo.id, 0)}"
 				in:receive="{{key: todo.id}}"
 				out:send="{{key: todo.id}}"
@@ -285,8 +284,13 @@
 		{/each}
 	</div>
 
+	
+
 
 </div>
+</div>
+
+
 
    {:else if activePage == "home"}
 	<!--Bootsrap 4 CDN-->
@@ -308,7 +312,7 @@
 							<div class="input-group-prepend" >
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" id="username" class="form-control" placeholder="username">
+							<input type="text" id="username" class="form-control" placeholder="username or email">
 							
 						</div>
 						<div class="input-group form-group">
@@ -394,7 +398,7 @@
 main{
 margin: 0;
 padding: 0;
-
+background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -402,7 +406,7 @@ font-family: 'Numans', sans-serif;
 }
 
 .container{
-	background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+	
 height: 100%;
 align-content: center;
 
@@ -481,6 +485,13 @@ color: white;
 margin-left: 4px;
 }
 
+.name{
+	color: white;
+	font-weight: bold;
+	background-color: tomato;
+	border-radius: 10px;
+	font-size: 30px;
+}
 
 
 .new-todo {
@@ -492,14 +503,17 @@ margin-left: 4px;
 	.board {
 		max-width: 36em;
 		margin: 0 auto;
+		
 	}
 
-	.left, .right {
+	.left, .right, .down {
 		float: left;
-		width: 50%;
+		width: 100%;
 		padding: 0 1em 0 0;
 		box-sizing: border-box;
 	}
+
+	
 
 	
 
@@ -507,6 +521,7 @@ margin-left: 4px;
 		font-size: 2em;
 		font-weight: 200;
 		user-select: none;
+		color: white;
 	}
 
 	label {
@@ -518,14 +533,18 @@ margin-left: 4px;
 		padding: 0.5em;
 		margin: 0 auto 0.5em auto;
 		border-radius: 2px;
-		background-color: #eee;
+		background-color: greenyellow;
 		user-select: none;
 	}
 
 	input { margin: 0 }
 
 	.right label {
-		background-color: rgb(180,240,100);
+		background-color: rgb(226, 240, 100);
+	}
+
+	.down label{
+		background-color: red;
 	}
 
 	button {

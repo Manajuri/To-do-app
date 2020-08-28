@@ -2321,7 +2321,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (337:36) 
+    // (341:36) 
     function create_if_block_2(ctx) {
     	let div11;
     	let div10;
@@ -2391,65 +2391,65 @@ var app = (function () {
     			t7 = space();
     			div7 = element("div");
     			input3 = element("input");
-    			attr_dev(h3, "class", "svelte-1vly1ej");
-    			add_location(h3, file, 341, 4, 8279);
-    			attr_dev(div0, "class", "card-header svelte-1vly1ej");
-    			add_location(div0, file, 340, 3, 8248);
+    			attr_dev(h3, "class", "svelte-1tz8tkd");
+    			add_location(h3, file, 345, 4, 8338);
+    			attr_dev(div0, "class", "card-header svelte-1tz8tkd");
+    			add_location(div0, file, 344, 3, 8307);
     			attr_dev(i0, "class", "fas fa-user-tie");
-    			add_location(i0, file, 350, 38, 8544);
-    			attr_dev(span0, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span0, file, 350, 7, 8513);
-    			attr_dev(div1, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div1, file, 349, 6, 8471);
+    			add_location(i0, file, 354, 38, 8603);
+    			attr_dev(span0, "class", "input-group-text svelte-1tz8tkd");
+    			add_location(span0, file, 354, 7, 8572);
+    			attr_dev(div1, "class", "input-group-prepend svelte-1tz8tkd");
+    			add_location(div1, file, 353, 6, 8530);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "id", "register_username");
-    			attr_dev(input0, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input0, "class", "form-control svelte-1tz8tkd");
     			attr_dev(input0, "placeholder", "Username");
-    			add_location(input0, file, 352, 6, 8604);
+    			add_location(input0, file, 356, 6, 8663);
     			attr_dev(div2, "class", "input-group form-group");
-    			add_location(div2, file, 348, 20, 8427);
+    			add_location(div2, file, 352, 20, 8486);
     			attr_dev(i1, "class", "fas fa-key");
-    			add_location(i1, file, 357, 38, 8879);
-    			attr_dev(span1, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span1, file, 357, 7, 8848);
-    			attr_dev(div3, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div3, file, 356, 6, 8806);
+    			add_location(i1, file, 361, 38, 8938);
+    			attr_dev(span1, "class", "input-group-text svelte-1tz8tkd");
+    			add_location(span1, file, 361, 7, 8907);
+    			attr_dev(div3, "class", "input-group-prepend svelte-1tz8tkd");
+    			add_location(div3, file, 360, 6, 8865);
     			attr_dev(input1, "id", "register_password");
     			attr_dev(input1, "type", "password");
-    			attr_dev(input1, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input1, "class", "form-control svelte-1tz8tkd");
     			attr_dev(input1, "placeholder", "password");
-    			add_location(input1, file, 359, 6, 8934);
+    			add_location(input1, file, 363, 6, 8993);
     			attr_dev(div4, "class", "input-group form-group");
-    			add_location(div4, file, 355, 20, 8762);
+    			add_location(div4, file, 359, 20, 8821);
     			attr_dev(i2, "class", "fas fa-envelope");
-    			add_location(i2, file, 364, 38, 9168);
-    			attr_dev(span2, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span2, file, 364, 7, 9137);
-    			attr_dev(div5, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div5, file, 363, 6, 9095);
+    			add_location(i2, file, 368, 38, 9227);
+    			attr_dev(span2, "class", "input-group-text svelte-1tz8tkd");
+    			add_location(span2, file, 368, 7, 9196);
+    			attr_dev(div5, "class", "input-group-prepend svelte-1tz8tkd");
+    			add_location(div5, file, 367, 6, 9154);
     			attr_dev(input2, "type", "text");
     			attr_dev(input2, "id", "register_email");
-    			attr_dev(input2, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input2, "class", "form-control svelte-1tz8tkd");
     			attr_dev(input2, "placeholder", "E-mail");
-    			add_location(input2, file, 366, 6, 9228);
+    			add_location(input2, file, 370, 6, 9287);
     			attr_dev(div6, "class", "input-group form-group");
-    			add_location(div6, file, 362, 5, 9051);
+    			add_location(div6, file, 366, 5, 9110);
     			attr_dev(input3, "type", "submit");
     			input3.value = "Register";
-    			attr_dev(input3, "class", "btn float-right login_btn svelte-1vly1ej");
-    			add_location(input3, file, 371, 6, 9389);
+    			attr_dev(input3, "class", "btn float-right login_btn svelte-1tz8tkd");
+    			add_location(input3, file, 375, 6, 9448);
     			attr_dev(div7, "class", "form-group");
-    			add_location(div7, file, 370, 20, 9357);
+    			add_location(div7, file, 374, 20, 9416);
     			attr_dev(form, "action", "");
-    			add_location(form, file, 345, 4, 8347);
+    			add_location(form, file, 349, 4, 8406);
     			attr_dev(div8, "class", "card-body");
-    			add_location(div8, file, 344, 3, 8318);
-    			attr_dev(div9, "class", "card svelte-1vly1ej");
-    			add_location(div9, file, 339, 2, 8225);
+    			add_location(div8, file, 348, 3, 8377);
+    			attr_dev(div9, "class", "card svelte-1tz8tkd");
+    			add_location(div9, file, 343, 2, 8284);
     			attr_dev(div10, "class", "d-flex justify-content-center h-100");
-    			add_location(div10, file, 338, 1, 8172);
-    			attr_dev(div11, "class", "container svelte-1vly1ej");
-    			add_location(div11, file, 337, 1, 8146);
+    			add_location(div10, file, 342, 1, 8231);
+    			attr_dev(div11, "class", "container svelte-1tz8tkd");
+    			add_location(div11, file, 341, 1, 8205);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div11, anchor);
@@ -2503,14 +2503,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(337:36) ",
+    		source: "(341:36) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (291:34) 
+    // (295:34) 
     function create_if_block_1(ctx) {
     	let link0;
     	let t0;
@@ -2589,65 +2589,65 @@ var app = (function () {
     			attr_dev(link0, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
     			attr_dev(link0, "integrity", "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO");
     			attr_dev(link0, "crossorigin", "anonymous");
-    			add_location(link0, file, 292, 1, 6457);
+    			add_location(link0, file, 296, 1, 6507);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "https://use.fontawesome.com/releases/v5.3.1/css/all.css");
     			attr_dev(link1, "integrity", "sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU");
     			attr_dev(link1, "crossorigin", "anonymous");
-    			add_location(link1, file, 295, 1, 6705);
-    			attr_dev(h3, "class", "svelte-1vly1ej");
-    			add_location(h3, file, 301, 5, 7042);
-    			attr_dev(div0, "class", "card-header svelte-1vly1ej");
-    			add_location(div0, file, 300, 4, 7010);
+    			add_location(link1, file, 299, 1, 6755);
+    			attr_dev(h3, "class", "svelte-1tz8tkd");
+    			add_location(h3, file, 305, 5, 7092);
+    			attr_dev(div0, "class", "card-header svelte-1tz8tkd");
+    			add_location(div0, file, 304, 4, 7060);
     			attr_dev(i0, "class", "fas fa-user");
-    			add_location(i0, file, 308, 39, 7279);
-    			attr_dev(span0, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span0, file, 308, 8, 7248);
-    			attr_dev(div1, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div1, file, 307, 7, 7204);
+    			add_location(i0, file, 312, 39, 7329);
+    			attr_dev(span0, "class", "input-group-text svelte-1tz8tkd");
+    			add_location(span0, file, 312, 8, 7298);
+    			attr_dev(div1, "class", "input-group-prepend svelte-1tz8tkd");
+    			add_location(div1, file, 311, 7, 7254);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "id", "username");
-    			attr_dev(input0, "class", "form-control svelte-1vly1ej");
-    			attr_dev(input0, "placeholder", "username");
-    			add_location(input0, file, 310, 7, 7337);
+    			attr_dev(input0, "class", "form-control svelte-1tz8tkd");
+    			attr_dev(input0, "placeholder", "username or email");
+    			add_location(input0, file, 314, 7, 7387);
     			attr_dev(div2, "class", "input-group form-group");
-    			add_location(div2, file, 306, 6, 7159);
+    			add_location(div2, file, 310, 6, 7209);
     			attr_dev(i1, "class", "fas fa-key");
-    			add_location(i1, file, 315, 39, 7564);
-    			attr_dev(span1, "class", "input-group-text svelte-1vly1ej");
-    			add_location(span1, file, 315, 8, 7533);
-    			attr_dev(div3, "class", "input-group-prepend svelte-1vly1ej");
-    			add_location(div3, file, 314, 7, 7490);
+    			add_location(i1, file, 319, 39, 7623);
+    			attr_dev(span1, "class", "input-group-text svelte-1tz8tkd");
+    			add_location(span1, file, 319, 8, 7592);
+    			attr_dev(div3, "class", "input-group-prepend svelte-1tz8tkd");
+    			add_location(div3, file, 318, 7, 7549);
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "id", "password");
-    			attr_dev(input1, "class", "form-control svelte-1vly1ej");
+    			attr_dev(input1, "class", "form-control svelte-1tz8tkd");
     			attr_dev(input1, "placeholder", "password");
-    			add_location(input1, file, 317, 7, 7621);
+    			add_location(input1, file, 321, 7, 7680);
     			attr_dev(div4, "class", "input-group form-group");
-    			add_location(div4, file, 313, 6, 7445);
+    			add_location(div4, file, 317, 6, 7504);
     			attr_dev(input2, "type", "submit");
     			input2.value = "Login";
-    			attr_dev(input2, "class", "btn float-right login_btn svelte-1vly1ej");
-    			add_location(input2, file, 320, 7, 7758);
+    			attr_dev(input2, "class", "btn float-right login_btn svelte-1tz8tkd");
+    			add_location(input2, file, 324, 7, 7817);
     			attr_dev(div5, "class", "form-group");
-    			add_location(div5, file, 319, 6, 7724);
+    			add_location(div5, file, 323, 6, 7783);
     			attr_dev(form, "action", "");
-    			add_location(form, file, 305, 5, 7111);
+    			add_location(form, file, 309, 5, 7161);
     			attr_dev(div6, "class", "card-body");
-    			add_location(div6, file, 304, 4, 7081);
+    			add_location(div6, file, 308, 4, 7131);
     			attr_dev(a, "href", "#");
-    			attr_dev(a, "class", "svelte-1vly1ej");
-    			add_location(a, file, 326, 28, 7984);
-    			attr_dev(div7, "class", "d-flex justify-content-center links svelte-1vly1ej");
-    			add_location(div7, file, 325, 5, 7905);
+    			attr_dev(a, "class", "svelte-1tz8tkd");
+    			add_location(a, file, 330, 28, 8043);
+    			attr_dev(div7, "class", "d-flex justify-content-center links svelte-1tz8tkd");
+    			add_location(div7, file, 329, 5, 7964);
     			attr_dev(div8, "class", "card-footer");
-    			add_location(div8, file, 324, 4, 7873);
-    			attr_dev(div9, "class", "card svelte-1vly1ej");
-    			add_location(div9, file, 299, 3, 6986);
+    			add_location(div8, file, 328, 4, 7932);
+    			attr_dev(div9, "class", "card svelte-1tz8tkd");
+    			add_location(div9, file, 303, 3, 7036);
     			attr_dev(div10, "class", "d-flex justify-content-center h-100");
-    			add_location(div10, file, 298, 2, 6932);
-    			attr_dev(div11, "class", "container svelte-1vly1ej");
-    			add_location(div11, file, 297, 1, 6905);
+    			add_location(div10, file, 302, 2, 6982);
+    			attr_dev(div11, "class", "container svelte-1tz8tkd");
+    			add_location(div11, file, 301, 1, 6955);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, link0, anchor);
@@ -2711,17 +2711,18 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(291:34) ",
+    		source: "(295:34) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (217:3) {#if activePage == "todo"}
+    // (215:3) {#if activePage == "todo"}
     function create_if_block(ctx) {
     	let link;
     	let t0;
+    	let div7;
     	let div6;
     	let div1;
     	let div0;
@@ -2798,6 +2799,7 @@ var app = (function () {
     		c: function create() {
     			link = element("link");
     			t0 = space();
+    			div7 = element("div");
     			div6 = element("div");
     			div1 = element("div");
     			div0 = element("div");
@@ -2853,46 +2855,50 @@ var app = (function () {
     			attr_dev(link, "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css");
     			attr_dev(link, "integrity", "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO");
     			attr_dev(link, "crossorigin", "anonymous");
-    			add_location(link, file, 218, 0, 4262);
-    			add_location(div0, file, 222, 2, 4573);
-    			attr_dev(button0, "class", "btn btn-primary mr-2 svelte-1vly1ej");
-    			add_location(button0, file, 223, 2, 4603);
-    			attr_dev(button1, "class", "btn btn-info mr-2 svelte-1vly1ej");
-    			add_location(button1, file, 224, 2, 4694);
-    			attr_dev(button2, "class", "btn btn-danger svelte-1vly1ej");
-    			add_location(button2, file, 225, 2, 4784);
+    			add_location(link, file, 216, 0, 4245);
+    			attr_dev(div0, "class", "name svelte-1tz8tkd");
+    			add_location(div0, file, 220, 2, 4580);
+    			attr_dev(button0, "class", "btn btn-primary mr-2 svelte-1tz8tkd");
+    			add_location(button0, file, 221, 2, 4623);
+    			attr_dev(button1, "class", "btn btn-info mr-2 svelte-1tz8tkd");
+    			add_location(button1, file, 222, 2, 4714);
+    			attr_dev(button2, "class", "btn btn-danger svelte-1tz8tkd");
+    			add_location(button2, file, 223, 2, 4804);
     			attr_dev(input0, "type", "submit");
     			input0.value = "Logout";
-    			attr_dev(input0, "class", "btn btn-danger svelte-1vly1ej");
-    			add_location(input0, file, 226, 2, 4858);
+    			attr_dev(input0, "class", "btn btn-danger svelte-1tz8tkd");
+    			add_location(input0, file, 224, 2, 4878);
     			attr_dev(div1, "class", "d-flex justify-content-around align-items-center mt-2");
-    			add_location(div1, file, 221, 1, 4502);
+    			add_location(div1, file, 219, 1, 4509);
     			attr_dev(p, "class", "text-default");
-    			add_location(p, file, 229, 69, 5023);
+    			add_location(p, file, 227, 69, 5043);
     			attr_dev(div2, "class", "d-flex justify-content-around align-items-center mt-2");
-    			add_location(div2, file, 229, 1, 4955);
-    			attr_dev(input1, "class", "new-todo svelte-1vly1ej");
+    			add_location(div2, file, 227, 1, 4975);
+    			attr_dev(input1, "class", "new-todo svelte-1tz8tkd");
     			attr_dev(input1, "placeholder", "what needs to be done?");
-    			add_location(input1, file, 231, 1, 5071);
-    			attr_dev(h20, "class", "svelte-1vly1ej");
-    			add_location(h20, file, 238, 2, 5238);
-    			attr_dev(div3, "class", "left svelte-1vly1ej");
-    			add_location(div3, file, 237, 1, 5216);
-    			attr_dev(h21, "class", "svelte-1vly1ej");
-    			add_location(h21, file, 254, 2, 5652);
-    			attr_dev(div4, "class", "right svelte-1vly1ej");
-    			add_location(div4, file, 253, 1, 5629);
-    			attr_dev(h22, "class", "svelte-1vly1ej");
-    			add_location(h22, file, 271, 2, 6076);
-    			attr_dev(div5, "class", "right down svelte-1vly1ej");
-    			add_location(div5, file, 270, 1, 6048);
-    			attr_dev(div6, "class", "board svelte-1vly1ej");
-    			add_location(div6, file, 220, 3, 4480);
+    			add_location(input1, file, 229, 1, 5091);
+    			attr_dev(h20, "class", "svelte-1tz8tkd");
+    			add_location(h20, file, 236, 2, 5258);
+    			attr_dev(div3, "class", "left svelte-1tz8tkd");
+    			add_location(div3, file, 235, 1, 5236);
+    			attr_dev(h21, "class", "svelte-1tz8tkd");
+    			add_location(h21, file, 252, 2, 5672);
+    			attr_dev(div4, "class", "right svelte-1tz8tkd");
+    			add_location(div4, file, 251, 1, 5649);
+    			attr_dev(h22, "class", "svelte-1tz8tkd");
+    			add_location(h22, file, 269, 2, 6090);
+    			attr_dev(div5, "class", "down svelte-1tz8tkd");
+    			add_location(div5, file, 268, 1, 6068);
+    			attr_dev(div6, "class", "board svelte-1tz8tkd");
+    			add_location(div6, file, 218, 3, 4487);
+    			attr_dev(div7, "class", "background");
+    			add_location(div7, file, 217, 0, 4458);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, link, anchor);
     			insert_dev(target, t0, anchor);
-    			insert_dev(target, div6, anchor);
+    			insert_dev(target, div7, anchor);
+    			append_dev(div7, div6);
     			append_dev(div6, div1);
     			append_dev(div1, div0);
     			append_dev(div0, t1);
@@ -3021,7 +3027,7 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(link);
     			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(div6);
+    			if (detaching) detach_dev(div7);
 
     			for (let i = 0; i < each_blocks_2.length; i += 1) {
     				each_blocks_2[i].d();
@@ -3044,14 +3050,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(217:3) {#if activePage == \\\"todo\\\"}",
+    		source: "(215:3) {#if activePage == \\\"todo\\\"}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (240:2) {#each todos.filter(t => !t.done) as todo (todo.id)}
+    // (238:2) {#each todos.filter(t => !t.done) as todo (todo.id)}
     function create_each_block_2(key_1, ctx) {
     	let label;
     	let input;
@@ -3094,12 +3100,12 @@ var app = (function () {
     			button.textContent = "x";
     			t4 = space();
     			attr_dev(input, "type", "checkbox");
-    			attr_dev(input, "class", "svelte-1vly1ej");
-    			add_location(input, file, 246, 4, 5465);
-    			attr_dev(button, "class", "svelte-1vly1ej");
-    			add_location(button, file, 248, 4, 5541);
-    			attr_dev(label, "class", "svelte-1vly1ej");
-    			add_location(label, file, 240, 3, 5312);
+    			attr_dev(input, "class", "svelte-1tz8tkd");
+    			add_location(input, file, 244, 4, 5485);
+    			attr_dev(button, "class", "svelte-1tz8tkd");
+    			add_location(button, file, 246, 4, 5561);
+    			attr_dev(label, "class", "svelte-1tz8tkd");
+    			add_location(label, file, 238, 3, 5332);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -3172,14 +3178,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(240:2) {#each todos.filter(t => !t.done) as todo (todo.id)}",
+    		source: "(238:2) {#each todos.filter(t => !t.done) as todo (todo.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (256:2) {#each todos.filter(t => t.done) as todo (todo.id)}
+    // (254:2) {#each todos.filter(t => t.done) as todo (todo.id)}
     function create_each_block_1(key_1, ctx) {
     	let label;
     	let input;
@@ -3222,12 +3228,12 @@ var app = (function () {
     			button.textContent = "x";
     			t4 = space();
     			attr_dev(input, "type", "checkbox");
-    			attr_dev(input, "class", "svelte-1vly1ej");
-    			add_location(input, file, 263, 4, 5884);
-    			attr_dev(button, "class", "svelte-1vly1ej");
-    			add_location(button, file, 265, 4, 5960);
-    			attr_dev(label, "class", "svelte-1vly1ej");
-    			add_location(label, file, 256, 3, 5725);
+    			attr_dev(input, "class", "svelte-1tz8tkd");
+    			add_location(input, file, 261, 4, 5904);
+    			attr_dev(button, "class", "svelte-1tz8tkd");
+    			add_location(button, file, 263, 4, 5980);
+    			attr_dev(label, "class", "svelte-1tz8tkd");
+    			add_location(label, file, 254, 3, 5745);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -3300,14 +3306,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(256:2) {#each todos.filter(t => t.done) as todo (todo.id)}",
+    		source: "(254:2) {#each todos.filter(t => t.done) as todo (todo.id)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (273:2) {#each todoss.filter(t => t.done) as todo (todo.id)}
+    // (271:2) {#each todoss.filter(t => t.done) as todo (todo.id)}
     function create_each_block(key_1, ctx) {
     	let label;
     	let t0_value = /*todo*/ ctx[24].description + "";
@@ -3332,8 +3338,8 @@ var app = (function () {
     			label = element("label");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(label, "class", "svelte-1vly1ej");
-    			add_location(label, file, 273, 3, 6158);
+    			attr_dev(label, "class", "color svelte-1tz8tkd");
+    			add_location(label, file, 271, 3, 6172);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -3391,7 +3397,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(273:2) {#each todoss.filter(t => t.done) as todo (todo.id)}",
+    		source: "(271:2) {#each todoss.filter(t => t.done) as todo (todo.id)}",
     		ctx
     	});
 
@@ -3421,8 +3427,8 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			if (if_block) if_block.c();
-    			attr_dev(main, "class", "svelte-1vly1ej");
-    			add_location(main, file, 212, 0, 4174);
+    			attr_dev(main, "class", "svelte-1tz8tkd");
+    			add_location(main, file, 210, 0, 4157);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3577,7 +3583,6 @@ var app = (function () {
     				$$invalidate(0, user = response.data.user);
     				localStorage.setItem("user", JSON.stringify(user));
     				console.log(user);
-    				alert(user.id);
     				$$invalidate(2, activePage = "todo");
 
     				if (user) {
@@ -3624,7 +3629,7 @@ var app = (function () {
 
     			if (response.data.success) {
     				$$invalidate(2, activePage = "home");
-    				alert(email);
+    				alert("You can login");
     			}
     		});
     	}
